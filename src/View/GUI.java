@@ -10,7 +10,8 @@ public class GUI extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
-
+    public void start(Stage gui) {
+        gui.setTitle("Le Pancherie");
+        gui.show();
     }
 }
