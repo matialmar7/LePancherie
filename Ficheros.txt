@@ -1,0 +1,4 @@
+LePancherie--------->Source----->View-------->Gui.java
+	   |		  |----->Controller-->
+	   |		  |----->Model
+	   |-------->Res
