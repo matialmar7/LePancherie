@@ -1,0 +1,15 @@
+Index: src/GUI/ViewModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/GUI/ViewModel.java	(date 1591497949216)
++++ src/GUI/ViewModel.java	(date 1591497949216)
+@@ -0,0 +1,7 @@
++package GUI;
++
++public class ViewModel {
++
++
++    
++}
