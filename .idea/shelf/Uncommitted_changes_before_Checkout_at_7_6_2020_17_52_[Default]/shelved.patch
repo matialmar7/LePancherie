@@ -1,0 +1,17 @@
+Index: src/GUI/Mejoras.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GUI;\r\n\r\nimport javafx.scene.image.Image;\r\n\r\n\r\npublic enum Mejoras {\r\n    Condimentos(new Image(\"Media/Condimentos_1.png\"),new Image(\"Media/Condimentos_2.png\"),new Image(\"Media/Condimentos_3.png\"),1.05,1.075,1.1),\r\n    Bebidas(new Image(\"Media/Bebidas_1.png\"),new Image(\"Media/Bebidas_2.png\"),new Image(\"Media/Bebidas_3.png\"),1.075,1.1,1.125);\r\n\r\n\r\n    private Image NivelA;\r\n    private Image NivelB;\r\n    private Image NivelC;\r\n    private int cantidad;\r\n    private double[] Multiplicador = new double[3];\r\n\r\n    Mejoras(Image NivelA, Image NivelB, Image NivelC, double MultiplicadorA,double MultiplicadorB,double MultiplicadorC)\r\n    {\r\n        //CADA NIVEL ES LA EVOLUCION DE LA MEJORA\r\n        cantidad = 0;\r\n        this.NivelA = NivelA;\r\n        this.NivelB = NivelB;\r\n        this.NivelC = NivelC;\r\n        Multiplicador[0] = MultiplicadorA;\r\n        Multiplicador[1] = MultiplicadorB;\r\n        Multiplicador[2] = MultiplicadorC;\r\n    }\r\n\r\n    public String getNivelUrl(int Nivel){\r\n        switch (Nivel){\r\n            case 1:\r\n                return NivelA.getUrl();\r\n            case 2:\r\n                return NivelB.getUrl();\r\n            case 3:\r\n                return NivelC.getUrl();\r\n            default:\r\n                return NivelC.getUrl();\r\n        }\r\n    }\r\n    public double[] getMultArray(){\r\n        return Multiplicador;\r\n    }\r\n\r\n    public int getCantidad(){\r\n        return cantidad;\r\n    }\r\n    public void incCantidad(){\r\n        cantidad++;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/GUI/Mejoras.java	(revision 2305ee79d4b41a5e2a9223417a650d374a2272a1)
++++ src/GUI/Mejoras.java	(date 1591563130713)
+@@ -38,6 +38,7 @@
+                 return NivelC.getUrl();
+         }
+     }
++
+     public double[] getMultArray(){
+         return Multiplicador;
+     }

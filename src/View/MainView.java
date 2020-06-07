@@ -1,25 +1,26 @@
 package src.View;
-import src.Controller.*;
+
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.util.Observable;
-import java.util.Observer;
 
-public class MainView extends Application implements Observer {
-
-    private MainViewController controlador;
-
-    public MainView(MainViewController controlador){
-
-    }
+public class MainView extends Application {
+    FXMLLoader loader;
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage primaryStage) throws Exception {
 
-    }
-
-    @Override
-    public void update(Observable o, Object arg) {
-
+        loader = new FXMLLoader(getClass().getResource("MainView.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("Interfaz.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("Texto.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("Mejoras.css").toExternalForm());
+        primaryStage.setResizable(false);
+        primaryStage.setTitle("Le Pancherie");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 }

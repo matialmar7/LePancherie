@@ -1,0 +1,24 @@
+.MejorasBtn{
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+}
+.MejorasBtn:hover{
+    -fx-background-size: 80%;
+}
+#Condimentos{
+    -fx-background-image: url("../Res/Mejoras/Condimentos/Condimentos_lvl_1.png");
+    -fx-background-position: center;
+}
+#Bebidas{
+    -fx-background-image: url("../Res/Mejoras/Bebidas/Bebidas_lvl_1.png");
+    -fx-background-position: center;
+}
+#Papas{
+    -fx-background-image: url("../Res/Mejoras/Papas/Papas_lvl_1.png");
+    -fx-background-position: center;
+}
+#Heladeras{
+    -fx-background-image: url("../Res/Mejoras/Heladeras/Heladeras_lvl_1.png");
+    -fx-background-position: center;
+}
