@@ -8,6 +8,36 @@ public class Model  {
 
     private static int StockPanchos = 0;
 
+    private enum Mejoras{
+        CURSORES(),
+        CONDIMENTOS(),
+        PAPAS(),
+        BEBIDAS(),
+        PARRILLAS(),
+        OLLAS(),
+        HELADERA(),
+        CAJA_REGISTRADORA(),
+        EMPLEADOS(),
+        SUCURSALES();
+
+        Mejoras(){
+
+        }
+    }
+    private enum Fondos{
+        CALLE(),
+        CASA(),
+        PLAZA(),
+        FERIA(),
+        RESTAURANTE(),
+        ORBITA(),
+        MARTE();
+
+        Fondos(){
+
+        }
+    }
+
     //*****************************************************************************
     //OBSERVABLE
     private List<Observador> observadores = new ArrayList<Observador>();

@@ -26,3 +26,15 @@
     -fx-background-image: url("../Res/Mejoras/Heladeras/Heladeras_lvl_1.png");
     -fx-background-position: center;
 }
+#Parrillas{
+    -fx-background-image: url("../Res/Mejoras/Parrillas/Parilla_lvl_1.png");
+    -fx-background-position: center;
+}
+#Ollas{
+    -fx-background-image: url("../Res/Mejoras/Ollas/Olla_lvl_1.png");
+    -fx-background-position: center;
+}
+#Empleados{
+    -fx-background-image: url("../Res/Mejoras/Empleados/Empleados_lvl_1.png");
+    -fx-background-position: center;
+}
