@@ -6,6 +6,6 @@ import src.Model.Model;
 import src.View.MainView;
 public class Main {
     public static void main(String[] args) {
-        Application.launch(src.View.MainView.class, args);
+        Application.launch(src.View.MainView.class  , args);
     }
 }

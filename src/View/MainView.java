@@ -7,18 +7,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.application.Platform;
+
 import src.Controller.MainViewController;
 import src.Model.Model;
 
-import java.util.Observable;
-import java.util.Observer;
-
-public class MainView extends Application implements Observer {
-    FXMLLoader loader;
-    Model modelo = new Model();
-    MainViewController controlador = new MainViewController(modelo);
-
-
+public class MainView extends Application implements src.Model.Observador  {
+    private FXMLLoader loader;
+    private Model modelo = new Model();
+    private MainViewController controlador = new MainViewController(modelo);
+    private Label stock;
     @Override
     public void start(Stage primaryStage) throws Exception {
 
@@ -26,10 +24,13 @@ public class MainView extends Application implements Observer {
         //Añado el controlador
         loader.setController(controlador);
         //Añado el observer
-        modelo.addObserver(this);
+        modelo.addObservador(this);
 
         Parent root = loader.load();
         Scene scene = new Scene(root);
+
+        stock = (Label) scene.lookup("#StockLbl");
+
         scene.getStylesheets().add(getClass().getResource("Interfaz.css").toExternalForm());
         scene.getStylesheets().add(getClass().getResource("Texto.css").toExternalForm());
         scene.getStylesheets().add(getClass().getResource("Mejoras.css").toExternalForm());
@@ -45,7 +46,12 @@ public class MainView extends Application implements Observer {
     }
 
     @Override
-    public void update(Observable o, Object arg) {
-
+    public void update() {
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                stock.setText(String.valueOf(modelo.getPanchos()));
+            }
+        });
     }
 }
