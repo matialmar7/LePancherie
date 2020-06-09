@@ -1,23 +1,23 @@
 #Nivel_Pane{
-    -fx-background-image: url("../Res/Interfaz/Fondos/Fondo_Casa.png");
+    -fx-background-image: url("../../Res/Interfaz/Fondos/Fondo_Casa.png");
     -fx-background-color: transparent;
     -fx-background-size: contain;
     -fx-background-repeat: no-repeat;
 }
 #Pancho_Pane{
-    -fx-background-image: url("../Res/Interfaz/Fondo_clickObj.png");
+    -fx-background-image: url("../../Res/Interfaz/Fondo_ClickObj.png");
     -fx-background-color: transparent;
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
 
 }
 #Mejoras_Grid{
-    -fx-background-image: url("../Res/Interfaz/Botonera.png");
+    -fx-background-image: url("../../Res/Interfaz/Botonera.png");
     -fx-background-color: #FFFFBA;
 }
 #PanchoBtn{
     -fx-background-color: transparent;
-    -fx-background-image: url("../Res/Interfaz/ImgPancho.png");
+    -fx-background-image: url("../../Res/Interfaz/ImgPancho.png");
     -fx-background-position: center;
     -fx-background-size: 90%;
     -fx-background-repeat: no-repeat;

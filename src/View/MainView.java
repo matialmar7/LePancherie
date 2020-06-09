@@ -31,9 +31,9 @@ public class MainView extends Application implements src.Model.Observador  {
 
         stock = (Label) scene.lookup("#StockLbl");
 
-        scene.getStylesheets().add(getClass().getResource("Interfaz.css").toExternalForm());
-        scene.getStylesheets().add(getClass().getResource("Texto.css").toExternalForm());
-        scene.getStylesheets().add(getClass().getResource("Mejoras.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("css/Interfaz.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("css/Texto.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("css/Mejoras.css").toExternalForm());
         primaryStage.setResizable(false);
         primaryStage.setTitle("Le Pancherie");
         primaryStage.setScene(scene);

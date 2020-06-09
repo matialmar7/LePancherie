@@ -1,0 +1,50 @@
+.MejorasBtn{
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+.Tooltip{
+    -fx-background-color: #FFFF96;
+    -fx-font-family: "Comic Sans MS";
+    -fx-text-fill: black;
+}
+.MejorasBtn:hover{
+    -fx-background-size: 80%;
+}
+#Cursores{
+    -fx-background-image: url("../../Res/Mejoras/Cursores/Cursores_lvl_1.png");
+    -fx-background-position: center;
+}
+#Condimentos{
+    -fx-background-image: url("../../Res/Mejoras/Condimentos/Condimentos_lvl_1.png");
+    -fx-background-position: center;
+}
+#Bebidas{
+    -fx-background-image: url("../../Res/Mejoras/Bebidas/Bebidas_lvl_1.png");
+    -fx-background-position: center;
+}
+#Papas{
+    -fx-background-image: url("../../Res/Mejoras/Papas/Papas_lvl_1.png");
+    -fx-background-position: center;
+}
+#Heladeras{
+    -fx-background-image: url("../../Res/Mejoras/Heladeras/Heladeras_lvl_1.png");
+    -fx-background-position: center;
+}
+#Parrillas{
+    -fx-background-image: url("../../Res/Mejoras/Parrillas/Parilla_lvl_1.png");
+    -fx-background-position: center;
+}
+#Ollas{
+    -fx-background-image: url("../../Res/Mejoras/Ollas/Olla_lvl_1.png");
+    -fx-background-position: center;
+}
+#Caja{
+    -fx-background-image: url("../../Res/Mejoras/Caja_Registradora/Caja_Registradora_lvl_1.png");
+    -fx-background-position: center;
+}
+#Empleados{
+    -fx-background-image: url("../../Res/Mejoras/Empleados/Empleados_lvl_1.png");
+    -fx-background-position: center;
+}
