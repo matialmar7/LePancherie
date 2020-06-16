@@ -1,26 +1,27 @@
 package src.Model;
 
-import javafx.beans.InvalidationListener;
 import javafx.scene.image.Image;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Model  {
+public class Model implements Observado{
 
-    private static int StockPanchos = 0;
+    private static double StockPanchos = 0;
+    private static double PanchoIdle = 0;
+    private static String mensaje = "LOS PANCHOS SON BUENOS PARA LA SALUD";
 
     public enum Mejoras{
         CURSORES(10,0.075,new Image("Res/Mejoras/Cursores/Cursores_lvl_1.png"),new Image("Res/Mejoras/Cursores/Cursores_lvl_2.png"),new Image("Res/Mejoras/Cursores/Cursores_lvl_3.png")),
         CONDIMENTOS(1,1, new Image("Res/Mejoras/Condimentos/Condimentos_lvl_1.png"),new Image("Res/Mejoras/Condimentos/Condimentos_lvl_2.png"),new Image("Res/Mejoras/Condimentos/Condimentos_lvl_3.png")),
         PAPAS(1,1,new Image("Res/Mejoras/Papas/Papas_lvl_1.png"),new Image("Res/Mejoras/Papas/Papas_lvl_2.png"),new Image("Res/Mejoras/Papas/Papas_lvl_3.png")),
-        BEBIDAS(1,1,new Image("Res/Mejoras/Bebidas/Bebidas_lvl_1.png"),new Image("Res/Mejoras/Bebidas/Bebidas_lvl_2.png"),new Image("Res/Mejoras/Bebidas/Bebidas_lvl_3.png"));
-        //PARRILLAS(1,1,new Image("Res/Mejoras/Parrillas"),new Image(),new Image()),
+        BEBIDAS(1,1,new Image("Res/Mejoras/Bebidas/Bebidas_lvl_1.png"),new Image("Res/Mejoras/Bebidas/Bebidas_lvl_2.png"),new Image("Res/Mejoras/Bebidas/Bebidas_lvl_3.png")),
+        PARRILLAS(1,1,new Image("Res/Mejoras/Parrillas/Parilla_lvl_1.png"),new Image("Res/Mejoras/Parrillas/Parilla_lvl_2.png"),new Image("Res/Mejoras/Parrillas/Parilla_lvl_3.png")),
         //OLLAS(1,1,new Image("Res/Mejoras/Ollas"),new Image(),new Image()),
-        //HELADERA(1,1,new Image("Res/Mejoras/Heladeras"),new Image(),new Image()),
+        HELADERA(1,1,new Image("Res/Mejoras/Heladeras/Heladeras_lvl_1.png"),new Image("Res/Mejoras/Heladeras/Heladeras_lvl_2.png"),new Image("Res/Mejoras/Heladeras/Heladeras_lvl_3.png")),
         //CAJA_REGISTRADORA(1,1,new Image("Res/Mejoras/Caja_Registradora"),new Image(),new Image()),
-        //EMPLEADOS(1,1,new Image("Res/Mejoras/Empleados"),new Image(),new Image()),
-        //SUCURSALES(1,1,new Image("Res/Mejoras/Sucursales"),new Image(),new Image());
+        EMPLEADOS(1,1,new Image("Res/Mejoras/Empleados/Empleados_lvl_1.png"),new Image("Res/Mejoras/Empleados/Empleados_lvl_2.png"),new Image("Res/Mejoras/Empleados/Empleados_lvl_3.png")),
+        SUCURSALES(1,1,new Image("Res/Mejoras/Sucursales/Sucursales_lvl_1.png"),new Image("Res/Mejoras/Sucursales/Sucursales_lvl_2.png"),new Image("Res/Mejoras/Sucursales/Sucursales_lvl_3.png"));
 
         private int cantidad;
         private int costoBase;
@@ -38,7 +39,7 @@ public class Model  {
             this.lvl3 = lvl3;
         }
         public enum Nivel{
-            INICIAL,MEDIO,AVANZADO;
+            INICIAL,MEDIO,AVANZADO, BLOQUEADO_INICIAL, BLOQUEADO_MEDIO, BLOQUEADO_AVANZADO;
         }
 
         public void addCantidad(int i) throws IllegalArgumentException{
@@ -85,6 +86,10 @@ public class Model  {
             }
             return Nivel.INICIAL;
         }
+        //CAMBIAR
+        public double getPanchoIdleValue(){
+            return 0.25; //ESTO ES CUALQUIER PELOTUDES
+        }
     }
     private enum Fondos{
         //CALLE(),
@@ -104,6 +109,7 @@ public class Model  {
     //OBSERVABLE
     private List<Observador> observadores = new ArrayList<Observador>();
 
+    @Override
     public void addObservador(Observador o) throws IllegalArgumentException{
         if(o != null){
             observadores.add(o);
@@ -114,7 +120,7 @@ public class Model  {
         }
 
     }
-
+    @Override
     public void notificar(Observador o) throws IllegalArgumentException{
         if(observadores.contains(o)){
             o.update();
@@ -123,14 +129,14 @@ public class Model  {
             throw new IllegalArgumentException("El observador no se encuentra en la lista de observadores");
         }
     }
-
+    @Override
     public void notificarTodos(){
         for (Observador o: observadores) {
             notificar(o);}
     }
     //****************************************************************************
 
-    public void addPancho(int i){
+    public void addPancho(double i){
         StockPanchos += i;
         notificar(observadores.get(0));
     }
@@ -144,18 +150,32 @@ public class Model  {
         }
     }
     public int getPanchos(){
-        return StockPanchos;
+        return (int)StockPanchos;
     }
-
+    public double getPanchoIdle(){
+        return PanchoIdle;
+    }
+    public void addPanchoIdle(double val){
+        PanchoIdle += val;
+    }
     public void comprarMejora(Mejoras mejora){
         int costoMejora = mejora.getCosto();
         if(StockPanchos >= costoMejora){
             mejora.addCantidad(1);
             takePanchos(costoMejora);
+            addPanchoIdle(mejora.getPanchoIdleValue());
         }
         else{
-            System.out.println("Necesitas tener: " + costoMejora + " panchos para comprar " + mejora + " nivel " + (String.valueOf(mejora.getCantidad()+1)));
+            String msj = "Necesitas tener: " + costoMejora + " panchos para comprar " + mejora + " nivel " + (String.valueOf(mejora.getCantidad()+1));
+            setMensaje(msj);
         }
+    }
+    public void setMensaje(String msj){
+        mensaje = msj;
+        notificar(observadores.get(0));
+    }
+    public String getMensaje(){
+        return mensaje;
     }
 
 }

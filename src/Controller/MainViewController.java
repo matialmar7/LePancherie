@@ -16,4 +16,8 @@ public class MainViewController {
     public void Cursor_onClick(){
         modelo.comprarMejora(Model.Mejoras.CURSORES);
     }
+    public void addPanchoIdle(){
+        modelo.addPancho(modelo.getPanchoIdle());
+    }
+
 }

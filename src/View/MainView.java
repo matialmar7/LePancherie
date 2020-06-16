@@ -8,8 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.application.Platform;
-
+import javafx.concurrent.*;
 import src.Controller.MainViewController;
+import src.Controller.PanchoIdleTask;
 import src.Model.Model;
 
 public class MainView extends Application implements src.Model.Observador  {
@@ -17,6 +18,18 @@ public class MainView extends Application implements src.Model.Observador  {
     private Model modelo = new Model();
     private MainViewController controlador = new MainViewController(modelo);
     private Label stock;
+    private Label msjBanner;
+
+    private Task PanchoIdleTask = new PanchoIdleTask(controlador);
+
+    @Override
+    public void init() throws Exception {
+        Thread panchoIdle = new Thread(PanchoIdleTask);
+        panchoIdle.setDaemon(true);
+        panchoIdle.start();
+
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception {
 
@@ -30,6 +43,7 @@ public class MainView extends Application implements src.Model.Observador  {
         Scene scene = new Scene(root);
 
         stock = (Label) scene.lookup("#StockLbl");
+        msjBanner = (Label) scene.lookup("#msjBanner");
 
         scene.getStylesheets().add(getClass().getResource("css/Interfaz.css").toExternalForm());
         scene.getStylesheets().add(getClass().getResource("css/Texto.css").toExternalForm());
@@ -39,6 +53,11 @@ public class MainView extends Application implements src.Model.Observador  {
         primaryStage.setScene(scene);
         primaryStage.show();
 
+    }
+
+    @Override
+    public void stop() throws Exception {
+        super.stop();
     }
 
     public void setController(MainViewController controlador){
@@ -51,7 +70,9 @@ public class MainView extends Application implements src.Model.Observador  {
             @Override
             public void run() {
                 stock.setText(String.valueOf(modelo.getPanchos()));
+                msjBanner.setText(modelo.getMensaje());
             }
         });
     }
+
 }

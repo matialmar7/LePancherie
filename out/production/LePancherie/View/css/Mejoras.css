@@ -48,3 +48,7 @@
     -fx-background-image: url("../../Res/Mejoras/Empleados/Empleados_lvl_1.png");
     -fx-background-position: center;
 }
+#Sucursales{
+    -fx-background-image: url("../../Res/Mejoras/Sucursales/Sucursales_lvl_1.png");
+    -fx-background-position: center;
+}

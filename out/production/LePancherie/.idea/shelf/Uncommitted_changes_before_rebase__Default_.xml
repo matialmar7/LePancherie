@@ -1,19 +1,4 @@
-<changelist name="Uncommitted_changes_before_rebase_[Default]" date="1591497921505" recycled="true" deleted="true">
+<changelist name="Uncommitted_changes_before_rebase_[Default]" date="1592272846028" recycled="false" toDelete="true">
   <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default]/shelved.patch" />
   <option name="DESCRIPTION" value="Uncommitted changes before rebase [Default]" />
-  <binary>
-    <option name="BEFORE_PATH" />
-    <option name="AFTER_PATH" value="src/Media/Heladeras_3.png" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default]/Heladeras_3.png" />
-  </binary>
-  <binary>
-    <option name="BEFORE_PATH" />
-    <option name="AFTER_PATH" value="src/Media/Heladeras_2.png" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default]/Heladeras_2.png" />
-  </binary>
-  <binary>
-    <option name="BEFORE_PATH" />
-    <option name="AFTER_PATH" value="src/Media/Heladeras_1.png" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default]/Heladeras_1.png" />
-  </binary>
 </changelist>
