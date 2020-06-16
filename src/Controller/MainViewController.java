@@ -19,5 +19,7 @@ public class MainViewController {
     public void addPanchoIdle(){
         modelo.addPancho(modelo.getPanchoIdle());
     }
-
+    public void printRandomMensaje(){
+        modelo.setMensaje(modelo.getRandomMessage());
+    }
 }

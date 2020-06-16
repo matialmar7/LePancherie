@@ -4,20 +4,30 @@ import javafx.scene.image.Image;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Model implements Observado{
 
     private static double StockPanchos = 0;
     private static double PanchoIdle = 0;
     private static String mensaje = "LOS PANCHOS SON BUENOS PARA LA SALUD";
+    private static String[] Mensajes = {
+            "LOS PANCHOS SON BUENOS PARA LA SALUD",
+            "LA PERSONA MAS LONGEVA DEL MUNDO COME DIEZ PANCHOS AL DIA",
+            "COMER UN PANCHO AL DIA REDUCE EL RIESGO DE OBESIDAD EN UN -15%",
+            "F",
+            "A LOS PANCHOS SE LES DICE FRANCISCO",
+            "EN UN KG ENTRAN 12 SALCHICAS",
+            "EL PANCHO MAS LARGO DEL MUNDO TIENE 203 METROS Y PESA 120KGs",
+            };
 
-    public enum Mejoras{
+    public static enum Mejoras{
         CURSORES(10,0.075,new Image("Res/Mejoras/Cursores/Cursores_lvl_1.png"),new Image("Res/Mejoras/Cursores/Cursores_lvl_2.png"),new Image("Res/Mejoras/Cursores/Cursores_lvl_3.png")),
         CONDIMENTOS(1,1, new Image("Res/Mejoras/Condimentos/Condimentos_lvl_1.png"),new Image("Res/Mejoras/Condimentos/Condimentos_lvl_2.png"),new Image("Res/Mejoras/Condimentos/Condimentos_lvl_3.png")),
         PAPAS(1,1,new Image("Res/Mejoras/Papas/Papas_lvl_1.png"),new Image("Res/Mejoras/Papas/Papas_lvl_2.png"),new Image("Res/Mejoras/Papas/Papas_lvl_3.png")),
         BEBIDAS(1,1,new Image("Res/Mejoras/Bebidas/Bebidas_lvl_1.png"),new Image("Res/Mejoras/Bebidas/Bebidas_lvl_2.png"),new Image("Res/Mejoras/Bebidas/Bebidas_lvl_3.png")),
         PARRILLAS(1,1,new Image("Res/Mejoras/Parrillas/Parilla_lvl_1.png"),new Image("Res/Mejoras/Parrillas/Parilla_lvl_2.png"),new Image("Res/Mejoras/Parrillas/Parilla_lvl_3.png")),
-        //OLLAS(1,1,new Image("Res/Mejoras/Ollas"),new Image(),new Image()),
+        SALCHICHERA(1,1,new Image("Res/Mejoras/Salchichera/Salchichera_lvl_1.png"),new Image("Res/Mejoras/Salchichera/Salchichera_lvl_2.png"),new Image("Res/Mejoras/Salchichera/Salchichera_lvl_3.png")),
         HELADERA(1,1,new Image("Res/Mejoras/Heladeras/Heladeras_lvl_1.png"),new Image("Res/Mejoras/Heladeras/Heladeras_lvl_2.png"),new Image("Res/Mejoras/Heladeras/Heladeras_lvl_3.png")),
         //CAJA_REGISTRADORA(1,1,new Image("Res/Mejoras/Caja_Registradora"),new Image(),new Image()),
         EMPLEADOS(1,1,new Image("Res/Mejoras/Empleados/Empleados_lvl_1.png"),new Image("Res/Mejoras/Empleados/Empleados_lvl_2.png"),new Image("Res/Mejoras/Empleados/Empleados_lvl_3.png")),
@@ -88,7 +98,7 @@ public class Model implements Observado{
         }
         //CAMBIAR
         public double getPanchoIdleValue(){
-            return 0.25; //ESTO ES CUALQUIER PELOTUDES
+            return 0.05; //ESTO ES CUALQUIER PELOTUDES
         }
     }
     private enum Fondos{
@@ -137,8 +147,11 @@ public class Model implements Observado{
     //****************************************************************************
 
     public void addPancho(double i){
-        StockPanchos += i;
-        notificar(observadores.get(0));
+        if(i>0)
+        {
+            StockPanchos += i;
+            notificar(observadores.get(0));
+        }
     }
     public void takePanchos(int i){
         if(StockPanchos>= i){
@@ -177,5 +190,8 @@ public class Model implements Observado{
     public String getMensaje(){
         return mensaje;
     }
-
+    public String getRandomMessage(){ //hacer privado
+        Random rand = new Random();
+        return Mensajes[rand.nextInt(Mensajes.length)]; //Elijo mensaje aleatorio
+    }
 }

@@ -36,8 +36,8 @@
     -fx-background-image: url("../../Res/Mejoras/Parrillas/Parilla_lvl_1.png");
     -fx-background-position: center;
 }
-#Ollas{
-    -fx-background-image: url("../../Res/Mejoras/Ollas/Olla_lvl_1.png");
+#Salchicheras{
+    -fx-background-image: url("../../Res/Mejoras/Salchichera/Salchichera_lvl_1.png");
     -fx-background-position: center;
 }
 #Caja{

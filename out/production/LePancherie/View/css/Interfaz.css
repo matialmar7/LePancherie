@@ -11,6 +11,10 @@
     -fx-background-size: contain;
 
 }
+#bannerBG{
+    -fx-background-color: black;
+    -fx-opacity: 25%;
+}
 #Mejoras_Grid{
     -fx-background-image: url("../../Res/Interfaz/Botonera.png");
     -fx-background-color: #FFFFBA;

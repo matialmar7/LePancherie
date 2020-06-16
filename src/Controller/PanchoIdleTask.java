@@ -10,12 +10,6 @@ public class PanchoIdleTask extends Task {
     }
     @Override
     protected Void call() throws Exception {
-        try{
-            Thread.sleep(2000);
-        }
-        catch (InterruptedException e){
-            System.out.println("Fallo");
-        }
         for(;;){
             try{
                 Thread.sleep(100);
@@ -23,6 +17,8 @@ public class PanchoIdleTask extends Task {
             catch (InterruptedException e){
                 System.out.println("Fallo");
             }
+
+            //Añado panchitos cada 100ms
             controlador.addPanchoIdle();
         }
     }
