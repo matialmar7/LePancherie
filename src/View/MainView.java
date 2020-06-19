@@ -13,6 +13,7 @@ public class MainView extends Application  {
     public void start(Stage primaryStage) throws Exception {
 
         loader = new FXMLLoader(getClass().getResource("MainView.fxml"));
+        loader.setController(src.Main.controlador);
         Parent root = loader.load();
 
         Scene scene = new Scene(root);

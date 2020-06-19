@@ -213,6 +213,6 @@ public class Model implements Observado{
     }
     public void setMensaje(String msj){
         mensaje = msj;
-        notificar(observadores.get(0));
+        //notificar(observadores.get(0));
     }
 }

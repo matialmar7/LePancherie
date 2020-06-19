@@ -7,9 +7,11 @@ import src.Model.Model;
 
 public class Controlador {
     Model modelo;
+
     public Controlador(Model mod){
         modelo = mod;
     }
+
     @FXML
     private Button PanchoBtn;
     @FXML
@@ -34,9 +36,9 @@ public class Controlador {
     private Button SucursalesBtn;
 
     //METODOS CURSORES
-    @FXML
+
     public void Cursor_onClick(ActionEvent event){
-        modelo.comprarMejora(Model.Mejoras.CURSORES);
+        src.Main.modelo.comprarMejora(Model.Mejoras.CURSORES);
     }
 
 }
