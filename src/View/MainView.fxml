@@ -10,14 +10,14 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.Controller.Controlador">
     <children>
         <AnchorPane maxHeight="400.0" maxWidth="800.0" minHeight="400.0" minWidth="800.0" prefHeight="400.0" prefWidth="800.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <AnchorPane id="Nivel_Pane" fx:id="Nivel_Pane" prefHeight="400.0" prefWidth="480.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="0.0" />
                 <AnchorPane id="Pancho_Pane" fx:id="Pancho_Pane" layoutX="480.0" maxHeight="467.0" maxWidth="328.0" minHeight="377.0" minWidth="220.0" prefHeight="400.0" prefWidth="322.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="480.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
                     <children>
-                        <Button id="PanchoBtn" fx:id="PanchoBtn" layoutX="65.0" layoutY="120.0" mnemonicParsing="false" onAction="#Pancho_onClick" prefHeight="160.0" prefWidth="190.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="120.0" />
+                        <Button id="PanchoBtn" fx:id="PanchoBtn" layoutX="65.0" layoutY="120.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="190.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="120.0" />
                         <Label id="StockLbl" fx:id="stock" alignment="CENTER" layoutX="100.0" layoutY="36.0" prefHeight="40.0" prefWidth="127.0" styleClass="Stock" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="320.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="40.0">
                      <font>
                         <Font name="Berlin Sans FB" size="12.0" />
@@ -50,7 +50,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button id="Condimentos" fx:id="Condimentos_Btn" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" onAction="#Condimentos_onClick" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.columnIndex="1">
+                <Button id="Condimentos" fx:id="CondimentosBtn" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.columnIndex="1">
                     <GridPane.margin>
                         <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                     </GridPane.margin>
@@ -63,7 +63,7 @@
                         <Insets bottom="50.0" left="100.0" />
                     </GridPane.margin>
                 </Label>
-                <Button id="Bebidas" fx:id="Bebidas_Btn" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" onAction="#Bebidas_onClick" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.columnIndex="3">
+                <Button id="Bebidas" fx:id="BebidasBtn" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.columnIndex="3">
                     <GridPane.margin>
                         <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                     </GridPane.margin>
@@ -71,7 +71,7 @@
                   <Tooltip styleClass="Tooltip" text="Bebidas" />
                </tooltip>
                 </Button>
-            <Button id="Papas" fx:id="Heladeras_Btn" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" onAction="#Papas_onClick" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.columnIndex="2">
+            <Button id="Papas" fx:id="PapasBtn" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.columnIndex="2">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -82,7 +82,7 @@
                   <Tooltip styleClass="Tooltip" text="Papas" />
                </tooltip>
             </Button>
-            <Button id="Heladeras" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" onAction="#Heladeras_onClick" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button id="Heladeras" fx:id="HeladerasBtn" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -90,7 +90,7 @@
                   <Tooltip styleClass="Tooltip" text="Heladera" />
                </tooltip>
             </Button>
-            <Button id="Cursores" fx:id="Cursor_Btn" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" onAction="#Cursor_onClick" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn">
+            <Button id="Cursores" fx:id="CursorBtn" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn">
                <GridPane.margin>
                   <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -98,15 +98,7 @@
                   <Tooltip styleClass="Tooltip" text="Cursor" />
                </tooltip>
             </Button>
-            <Button id="Empleados" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" onAction="#Empleados_onClick" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.columnIndex="3" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
-               </GridPane.margin>
-               <tooltip>
-                  <Tooltip styleClass="Tooltip" text="Empleado" />
-               </tooltip>
-            </Button>
-            <Button id="Salchicheras" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" onAction="#Salchichera_onClick" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.rowIndex="1">
+            <Button id="Salchicheras" fx:id="SalchicherasBtn" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -114,7 +106,15 @@
                   <Tooltip styleClass="Tooltip" text="Salchichera" />
                </tooltip>
             </Button>
-            <Button id="Parrillas" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" onAction="#Parrillas_onClick" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.columnIndex="4">
+            <Button id="Empleados" fx:id="EmpleadosBtn" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <tooltip>
+                  <Tooltip styleClass="Tooltip" text="Empleado" />
+               </tooltip>
+            </Button>
+            <Button id="Parrillas" fx:id="ParrillasBtn" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.columnIndex="4">
                <GridPane.margin>
                   <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -122,7 +122,7 @@
                   <Tooltip styleClass="Tooltip" text="Parrilla" />
                </tooltip>
             </Button>
-            <Button id="Caja" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" onAction="#Caja_onClick" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button id="Caja" fx:id="CajaBtn" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -130,7 +130,7 @@
                   <Tooltip styleClass="Tooltip" text="Caja registradora" />
                </tooltip>
             </Button>
-            <Button id="Sucursales" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" onAction="#Sucursales_onClick" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <Button id="Sucursales" fx:id="SucursalesBtn" maxHeight="70.0" maxWidth="80.0" minHeight="70.0" minWidth="80.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="23.0" styleClass="MejorasBtn" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <tooltip>
                   <Tooltip styleClass="Tooltip" text="Sucursal" />
                </tooltip>
@@ -145,5 +145,6 @@
             </Label>
             </children>
         </GridPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
     </children>
 </AnchorPane>
