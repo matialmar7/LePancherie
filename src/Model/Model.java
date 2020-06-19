@@ -5,6 +5,7 @@ import javafx.scene.image.Image;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.lang.System;
 
 public class Model implements Observado{
 
@@ -20,6 +21,7 @@ public class Model implements Observado{
             "EN UN KG ENTRAN 12 SALCHICAS",
             "EL PANCHO MAS LARGO DEL MUNDO TIENE 203 METROS Y PESA 120KGs",
             };
+    private static long PanchoClickTimestamp = System.currentTimeMillis();
 
     public static enum Mejoras{
         CURSORES(10,0.075,new Image("Res/Mejoras/Cursores/Cursores_lvl_1.png"),new Image("Res/Mejoras/Cursores/Cursores_lvl_2.png"),new Image("Res/Mejoras/Cursores/Cursores_lvl_3.png")),
@@ -29,13 +31,14 @@ public class Model implements Observado{
         PARRILLAS(1,1,new Image("Res/Mejoras/Parrillas/Parilla_lvl_1.png"),new Image("Res/Mejoras/Parrillas/Parilla_lvl_2.png"),new Image("Res/Mejoras/Parrillas/Parilla_lvl_3.png")),
         SALCHICHERA(1,1,new Image("Res/Mejoras/Salchichera/Salchichera_lvl_1.png"),new Image("Res/Mejoras/Salchichera/Salchichera_lvl_2.png"),new Image("Res/Mejoras/Salchichera/Salchichera_lvl_3.png")),
         HELADERA(1,1,new Image("Res/Mejoras/Heladeras/Heladeras_lvl_1.png"),new Image("Res/Mejoras/Heladeras/Heladeras_lvl_2.png"),new Image("Res/Mejoras/Heladeras/Heladeras_lvl_3.png")),
-        //CAJA_REGISTRADORA(1,1,new Image("Res/Mejoras/Caja_Registradora"),new Image(),new Image()),
+        CAJA_REGISTRADORA(1,1,new Image("Res/Mejoras/Caja_Registradora/Caja_Registradora_lvl_1.png"),new Image("Res/Mejoras/Caja_Registradora/Caja_Registradora_lvl_2.png"),new Image("Res/Mejoras/Caja_Registradora/Caja_Registradora_lvl_3.png")),
         EMPLEADOS(1,1,new Image("Res/Mejoras/Empleados/Empleados_lvl_1.png"),new Image("Res/Mejoras/Empleados/Empleados_lvl_2.png"),new Image("Res/Mejoras/Empleados/Empleados_lvl_3.png")),
         SUCURSALES(1,1,new Image("Res/Mejoras/Sucursales/Sucursales_lvl_1.png"),new Image("Res/Mejoras/Sucursales/Sucursales_lvl_2.png"),new Image("Res/Mejoras/Sucursales/Sucursales_lvl_3.png"));
 
         private int cantidad;
         private int costoBase;
         private double growthRate;
+        private Nivel currentLvl;
         private Image lvl1;
         private Image lvl2;
         private Image lvl3;
@@ -43,13 +46,14 @@ public class Model implements Observado{
         Mejoras(int costoBase,double costGrowth, Image lvl1, Image lvl2, Image lvl3 ){
             cantidad = 0;
             growthRate = costGrowth;
+            currentLvl = Nivel.INICIAL;
             this.costoBase = costoBase;
             this.lvl1 = lvl1;
             this.lvl2 = lvl2;
             this.lvl3 = lvl3;
         }
         public enum Nivel{
-            INICIAL,MEDIO,AVANZADO, BLOQUEADO_INICIAL, BLOQUEADO_MEDIO, BLOQUEADO_AVANZADO;
+            INICIAL,MEDIO,AVANZADO;
         }
 
         public void addCantidad(int i) throws IllegalArgumentException{
@@ -84,17 +88,19 @@ public class Model implements Observado{
             }
             return costo;
         }
-        public Nivel getCurrentLevel(){
-            int cantidadLvl2 = 50;
-            int cantidadLvl3 = 100;
+        public void updateLevel(){
+            int cantidadLvl2 = 75;
+            int cantidadLvl3 = 150;
 
             if(cantidad >= cantidadLvl3){
-                return Nivel.AVANZADO;
+                currentLvl =  Nivel.AVANZADO;
             }
             else if(cantidad >= cantidadLvl2){
-                return Nivel.MEDIO;
+                currentLvl =  Nivel.MEDIO;
             }
-            return Nivel.INICIAL;
+        }
+        public Nivel getCurrentLevel(){
+            return currentLvl;
         }
         //CAMBIAR
         public double getPanchoIdleValue(){
@@ -146,14 +152,11 @@ public class Model implements Observado{
     }
     //****************************************************************************
 
-    public void addPancho(double i){
-        if(i>0)
-        {
-            StockPanchos += i;
-            notificar(observadores.get(0));
-        }
+
+    private boolean validarClick(long timestamp){
+        return (timestamp - PanchoClickTimestamp) >= 100;
     }
-    public void takePanchos(int i){
+    private void takePanchos(int i){
         if(StockPanchos>= i){
             StockPanchos -= i;
             notificar(observadores.get(0));
@@ -162,11 +165,22 @@ public class Model implements Observado{
             System.out.println("Debe insertar un numero de panchos menor al stock actual");
         }
     }
-    public int getPanchos(){
-        return (int)StockPanchos;
+    public void addPancho(double i){
+        if(i>0)
+        {
+            StockPanchos += i;
+            notificar(observadores.get(0));
+        }
     }
-    public double getPanchoIdle(){
-        return PanchoIdle;
+    public void addPanchoClick(double i){
+        long timestamp = System.currentTimeMillis();
+        if(validarClick(timestamp)){
+            PanchoClickTimestamp = timestamp;
+            addPancho(i);
+        }
+        else{
+            setMensaje("PARA UN POCO ESTAS YENDO DEMASIADO RAPIDO!!");
+        }
     }
     public void addPanchoIdle(double val){
         PanchoIdle += val;
@@ -175,6 +189,7 @@ public class Model implements Observado{
         int costoMejora = mejora.getCosto();
         if(StockPanchos >= costoMejora){
             mejora.addCantidad(1);
+            mejora.updateLevel();
             takePanchos(costoMejora);
             addPanchoIdle(mejora.getPanchoIdleValue());
         }
@@ -183,9 +198,11 @@ public class Model implements Observado{
             setMensaje(msj);
         }
     }
-    public void setMensaje(String msj){
-        mensaje = msj;
-        notificar(observadores.get(0));
+    public int getPanchos(){
+        return (int)StockPanchos;
+    }
+    public double getPanchoIdle(){
+        return PanchoIdle;
     }
     public String getMensaje(){
         return mensaje;
@@ -193,5 +210,9 @@ public class Model implements Observado{
     public String getRandomMessage(){ //hacer privado
         Random rand = new Random();
         return Mensajes[rand.nextInt(Mensajes.length)]; //Elijo mensaje aleatorio
+    }
+    public void setMensaje(String msj){
+        mensaje = msj;
+        notificar(observadores.get(0));
     }
 }
