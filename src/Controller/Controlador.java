@@ -1,12 +1,15 @@
 package src.Controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import src.Model.Model;
 
 public class Controlador {
     Model modelo;
-
+    public Controlador(Model mod){
+        modelo = mod;
+    }
     @FXML
     private Button PanchoBtn;
     @FXML
@@ -30,6 +33,10 @@ public class Controlador {
     @FXML
     private Button SucursalesBtn;
 
-
+    //METODOS CURSORES
+    @FXML
+    public void Cursor_onClick(ActionEvent event){
+        modelo.comprarMejora(Model.Mejoras.CURSORES);
+    }
 
 }
