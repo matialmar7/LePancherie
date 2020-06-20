@@ -20,17 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58289860-213b-4dbe-aa25-9314a6b13bb6" name="Default Changelist" comment="Controlador y modelo separado de la vista">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Calle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Casa0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Feria.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Marte.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Orbita.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Plaza.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Restaurante.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/.idea/shelf/Uncommitted_changes_before_rebase__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/.idea/shelf/Uncommitted_changes_before_rebase__Default_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/.idea/shelf/Uncommitted_changes_before_rebase__Default_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/.idea/shelf/Uncommitted_changes_before_rebase__Default_7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/View/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/View/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Casa.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Casa.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -254,7 +253,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1d6c7c8c-6dd5-48ec-ad1a-6ab3b7c0a39a" name="Default Changelist" comment="Controlador y modelo separado de la vista" />
+      <changelist id="58289860-213b-4dbe-aa25-9314a6b13bb6" name="Default Changelist" comment="Controlador y modelo separado de la vista" />
       <created>1359379246138</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -289,6 +288,7 @@
       <workItem from="1592578356944" duration="4599000" />
       <workItem from="1592587240834" duration="3835000" />
       <workItem from="1592613943065" duration="678000" />
+      <workItem from="1592673576751" duration="296000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Inicial">
       <created>1588453022107</created>
@@ -479,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592604131440</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Controlador y modelo separado de la vista">
+      <created>1592615746490</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1592615746490</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,22 +574,22 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="593" y="328" key="Github.ShareDialog/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1591498210163" />
-    <state width="1397" height="210" key="GridCell.Tab.0.bottom" timestamp="1592615715141">
+    <state width="1397" height="210" key="GridCell.Tab.0.bottom" timestamp="1592624335163">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.bottom/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592615715141" />
-    <state width="1397" height="210" key="GridCell.Tab.0.center" timestamp="1592615715141">
+    <state width="1397" height="210" key="GridCell.Tab.0.bottom/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592624335163" />
+    <state width="1397" height="210" key="GridCell.Tab.0.center" timestamp="1592624335163">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.center/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592615715141" />
-    <state width="1397" height="210" key="GridCell.Tab.0.left" timestamp="1592615715141">
+    <state width="1397" height="210" key="GridCell.Tab.0.center/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592624335163" />
+    <state width="1397" height="210" key="GridCell.Tab.0.left" timestamp="1592624335163">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.left/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592615715141" />
-    <state width="1397" height="210" key="GridCell.Tab.0.right" timestamp="1592615715141">
+    <state width="1397" height="210" key="GridCell.Tab.0.left/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592624335163" />
+    <state width="1397" height="210" key="GridCell.Tab.0.right" timestamp="1592624335163">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.right/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592615715141" />
+    <state width="1397" height="210" key="GridCell.Tab.0.right/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592624335163" />
     <state width="1397" height="276" key="GridCell.Tab.1.bottom" timestamp="1588552067122">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -603,10 +610,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="206" y="72" width="999" height="710" key="SettingsEditor/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1591564001120" />
-    <state x="312" y="163" key="Vcs.Push.Dialog.v2" timestamp="1592604138235">
+    <state x="312" y="163" key="Vcs.Push.Dialog.v2" timestamp="1592616090966">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="312" y="163" key="Vcs.Push.Dialog.v2/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592604138235" />
+    <state x="312" y="163" key="Vcs.Push.Dialog.v2/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592616090966" />
     <state x="359" y="159" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588453355448">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

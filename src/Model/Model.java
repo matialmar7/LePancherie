@@ -108,16 +108,19 @@ public class Model implements Observado{
         }
     }
     private enum Fondos{
-        //CALLE(),
-        CASA(new Image("Res/Interfaz/Fondos/Fondo_Casa.png"));
-        //PLAZA(),
-        //FERIA(),
-        //RESTAURANTE(),
-        //ORBITA(),
-        //MARTE();
+        CALLE(new Image("Res/Interfaz/Fondos/Fondo_Calle.png"),0),
+        CASA(new Image("Res/Interfaz/Fondos/Fondo_Casa.png"),1000),
+        PLAZA(new Image("Res/Interfaz/Fondos/Fondo_Plaza.png"),10000),
+        FERIA(new Image("Res/Interfaz/Fondos/Fondo_Feria.png"),100000),
+        RESTAURANTE(new Image("Res/Interfaz/Fondos/Fondo_Restaurante.png"),1000000),
+        ORBITA(new Image("Res/Interfaz/Fondos/Fondo_Orbita.png"),10000000),
+        MARTE(new Image("Res/Interfaz/Fondos/Fondo_Marte.png"),100000000);
+
         Image fondo;
-        Fondos(Image fondo){
+        int CostoPanchos;
+        Fondos(Image fondo, int CantPanchos){
             this.fondo = fondo;
+            CostoPanchos = CantPanchos;
         }
     }
 

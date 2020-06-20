@@ -2,15 +2,12 @@ package src.View;
 
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import src.Main;
-import src.Model.Model;
 import src.Model.Observador;
 
 public class MainView extends Application implements Observador {
