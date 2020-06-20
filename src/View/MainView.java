@@ -1,6 +1,7 @@
 package src.View;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import src.Main;
+import src.Model.Model;
 import src.Model.Observador;
 
 public class MainView extends Application implements Observador {
@@ -48,6 +51,9 @@ public class MainView extends Application implements Observador {
 
         Parent root = loader.load();
 
+        //SUBSCRIBO OBSERVADOR
+        Main.modelo.addObservador(this);
+
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("css/Interfaz.css").toExternalForm());
         scene.getStylesheets().add(getClass().getResource("css/Texto.css").toExternalForm());
@@ -66,6 +72,20 @@ public class MainView extends Application implements Observador {
 
     @Override
     public void update() {
-        stockLbl.setText();
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                //ACTUALIZO LABELS
+                stockLbl.setText(String.valueOf(src.Main.modelo.getPanchos()));
+                //msjBanner.setText(modelo.getMensaje());
+                //cursorLbl.setText(Integer.toString(Model.Mejoras.CURSORES.getCantidad()));
+                //cursorCostLbl.setText(Integer.toString(Model.Mejoras.CURSORES.getCosto()));
+                //panchosLbl.setText(String.format("%.0f", modelo.getPanchoIdle()*10) + " panchos/s");
+                //ACTUALIZO GRAFICOS DE MEJORAS
+                //cursor.setStyle(String.format("-fx-background-image: url(%s);",Model.Mejoras.CURSORES.getMejoraUrl(Model.Mejoras.CURSORES.getCurrentLevel())));
+                //Otros
+
+            }
+        });
     }
 }

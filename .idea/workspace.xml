@@ -20,15 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d6c7c8c-6dd5-48ec-ad1a-6ab3b7c0a39a" name="Default Changelist" comment="Controlador y modelo separado de la vista">
+      <change afterPath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LePancherie/View/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/View/MainView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/Controller/Controlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/Controller/Controlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -565,22 +562,22 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="593" y="328" key="Github.ShareDialog/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1591498210163" />
-    <state width="1397" height="210" key="GridCell.Tab.0.bottom" timestamp="1592614463940">
+    <state width="1397" height="210" key="GridCell.Tab.0.bottom" timestamp="1592614782848">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.bottom/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592614463940" />
-    <state width="1397" height="210" key="GridCell.Tab.0.center" timestamp="1592614463939">
+    <state width="1397" height="210" key="GridCell.Tab.0.bottom/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592614782848" />
+    <state width="1397" height="210" key="GridCell.Tab.0.center" timestamp="1592614782848">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.center/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592614463939" />
-    <state width="1397" height="210" key="GridCell.Tab.0.left" timestamp="1592614463938">
+    <state width="1397" height="210" key="GridCell.Tab.0.center/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592614782847" />
+    <state width="1397" height="210" key="GridCell.Tab.0.left" timestamp="1592614782847">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.left/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592614463938" />
-    <state width="1397" height="210" key="GridCell.Tab.0.right" timestamp="1592614463940">
+    <state width="1397" height="210" key="GridCell.Tab.0.left/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592614782847" />
+    <state width="1397" height="210" key="GridCell.Tab.0.right" timestamp="1592614782848">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.right/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592614463940" />
+    <state width="1397" height="210" key="GridCell.Tab.0.right/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592614782848" />
     <state width="1397" height="276" key="GridCell.Tab.1.bottom" timestamp="1588552067122">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
