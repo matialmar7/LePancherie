@@ -68,11 +68,16 @@ public class Model implements Observado{
             return cantidad;
         }
         public String getMejoraUrl(){
-            return switch (getCurrentLevel()) {
-                case INICIAL -> lvl1.getUrl();
-                case MEDIO -> lvl2.getUrl();
-                case AVANZADO -> lvl3.getUrl();
+            switch (getCurrentLevel())
+            {
+                case INICIAL:
+                    return lvl1.getUrl();
+                case MEDIO :
+                    return lvl2.getUrl();
+                case AVANZADO:
+                    return lvl3.getUrl();
             };
+            return lvl1.getUrl();
         }
         public int getCosto(){
             int costo;

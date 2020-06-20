@@ -20,19 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58289860-213b-4dbe-aa25-9314a6b13bb6" name="Default Changelist" comment="Mejoras listas">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/View/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/View/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/Controller/Controlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/Controller/Controlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/Controller/PanchoIdleTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/Controller/PanchoIdleTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/Controller/RandomMsj.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/Controller/RandomMsj.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/Model/Model$Mejoras.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/Model/Model$Mejoras.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controlador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +104,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="GUI" />
+        <entry key="$PROJECT_DIR$" value="arqui" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
