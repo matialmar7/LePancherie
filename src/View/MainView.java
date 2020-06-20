@@ -16,29 +16,6 @@ import src.Model.Observador;
 public class MainView extends Application implements Observador {
     private FXMLLoader loader;
 
-    @FXML
-    private Button PanchoBtn;
-    @FXML
-    private Button CursorBtn;
-    @FXML
-    private Button CondimentosBtn;
-    @FXML
-    private Button PapasBtn;
-    @FXML
-    private Button BebidasBtn;
-    @FXML
-    private Button ParrillasBtn;
-    @FXML
-    private Button SalchicherasBtn;
-    @FXML
-    private Button HeladerasBtn;
-    @FXML
-    private Button CajaBtn;
-    @FXML
-    private Button EmpleadosBtn;
-    @FXML
-    private Button SucursalesBtn;
-    @FXML
     private Label stockLbl;
 
 
@@ -55,6 +32,9 @@ public class MainView extends Application implements Observador {
         Main.modelo.addObservador(this);
 
         Scene scene = new Scene(root);
+        //TOMO REFERENCIAS DE OBJETOS A ACTUALIZAR
+        stockLbl = (Label) scene.lookup("#StockLbl");
+        //
         scene.getStylesheets().add(getClass().getResource("css/Interfaz.css").toExternalForm());
         scene.getStylesheets().add(getClass().getResource("css/Texto.css").toExternalForm());
         scene.getStylesheets().add(getClass().getResource("css/Mejoras.css").toExternalForm());
