@@ -143,6 +143,96 @@
                   <Insets bottom="-50.0" left="100.0" />
                </GridPane.margin>
             </Label>
+            <Label id="condimentosLbl" fx:id="condimentosLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="papasLbl" fx:id="papasLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="bebidasLbl" fx:id="bebidasLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.columnIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="parrillasLbl" fx:id="parrillasLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.columnIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="salchicherasLbl" fx:id="salchicherasLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="heladerasLbl" fx:id="heladerasLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="cajaLbl" fx:id="cajaLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="empleadosLbl" fx:id="empleadosLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="sucursalesLvl" fx:id="sucursalesLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="condimenttosCostLbl" fx:id="bebidasCostLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="-50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="papasCostLbl" fx:id="papasCostLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="-50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="bebidasCostLbl" fx:id="bebidasCostLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.columnIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="-50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="parrillasCostLbl" fx:id="parrillasCostLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.columnIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="-50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="salchicherasCostLbl" fx:id="salchicherasCostLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="-50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="heladerasCostLbl" fx:id="heladerasCostLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="-50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="cajaCostLbl" fx:id="cajaCostLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="-50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="empleadosCostLbl" fx:id="empleadosCostLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="-50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="sucursalesCostLbl" fx:id="sucursalesCostLbl" alignment="CENTER" prefHeight="18.0" prefWidth="45.0" styleClass="L1" text="0" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="-50.0" left="100.0" />
+               </GridPane.margin>
+            </Label>
             </children>
         </GridPane>
     </children>

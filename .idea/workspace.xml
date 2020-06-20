@@ -19,10 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58289860-213b-4dbe-aa25-9314a6b13bb6" name="Default Changelist" comment="Controlador y modelo separado de la vista">
+    <list default="true" id="58289860-213b-4dbe-aa25-9314a6b13bb6" name="Default Changelist" comment="Mejoras listas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PanchoIdleTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PanchoIdleTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RandomMsj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RandomMsj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/View/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/View/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/Controller/Controlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/Controller/Controlador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/Controller/PanchoIdleTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/Controller/PanchoIdleTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/Controller/RandomMsj.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/Controller/RandomMsj.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/Model/Model$Mejoras.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/Model/Model$Mejoras.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/View/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -479,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592615746490</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Controlador y modelo separado de la vista">
+      <created>1592674134485</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1592674134485</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +532,8 @@
     <MESSAGE value="Añado ilustraciones, Pongo sistema de actualizacion de graficos mejoras y display panchos/s" />
     <MESSAGE value="Mejoras" />
     <MESSAGE value="Controlador y modelo separado de la vista" />
-    <option name="LAST_COMMIT_MESSAGE" value="Controlador y modelo separado de la vista" />
+    <MESSAGE value="Mejoras listas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mejoras listas" />
   </component>
   <component name="WindowStateProjectService">
     <state x="346" y="108" key="#Inspections" timestamp="1588545699410">
@@ -567,22 +584,22 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="593" y="328" key="Github.ShareDialog/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1591498210163" />
-    <state width="1397" height="210" key="GridCell.Tab.0.bottom" timestamp="1592624335163">
+    <state width="1397" height="210" key="GridCell.Tab.0.bottom" timestamp="1592676752521">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.bottom/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592624335163" />
-    <state width="1397" height="210" key="GridCell.Tab.0.center" timestamp="1592624335163">
+    <state width="1397" height="210" key="GridCell.Tab.0.bottom/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592676752521" />
+    <state width="1397" height="210" key="GridCell.Tab.0.center" timestamp="1592676752521">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.center/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592624335163" />
-    <state width="1397" height="210" key="GridCell.Tab.0.left" timestamp="1592624335163">
+    <state width="1397" height="210" key="GridCell.Tab.0.center/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592676752521" />
+    <state width="1397" height="210" key="GridCell.Tab.0.left" timestamp="1592676752521">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.left/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592624335163" />
-    <state width="1397" height="210" key="GridCell.Tab.0.right" timestamp="1592624335163">
+    <state width="1397" height="210" key="GridCell.Tab.0.left/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592676752521" />
+    <state width="1397" height="210" key="GridCell.Tab.0.right" timestamp="1592676752521">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.right/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592624335163" />
+    <state width="1397" height="210" key="GridCell.Tab.0.right/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592676752521" />
     <state width="1397" height="276" key="GridCell.Tab.1.bottom" timestamp="1588552067122">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

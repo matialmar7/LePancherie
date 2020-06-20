@@ -23,7 +23,7 @@ public class Model implements Observado{
             };
     private static long PanchoClickTimestamp = System.currentTimeMillis();
 
-    public static enum Mejoras{
+    public enum Mejoras{
         CURSORES(10,0.075,new Image("Res/Mejoras/Cursores/Cursores_lvl_1.png"),new Image("Res/Mejoras/Cursores/Cursores_lvl_2.png"),new Image("Res/Mejoras/Cursores/Cursores_lvl_3.png")),
         CONDIMENTOS(1,1, new Image("Res/Mejoras/Condimentos/Condimentos_lvl_1.png"),new Image("Res/Mejoras/Condimentos/Condimentos_lvl_2.png"),new Image("Res/Mejoras/Condimentos/Condimentos_lvl_3.png")),
         PAPAS(1,1,new Image("Res/Mejoras/Papas/Papas_lvl_1.png"),new Image("Res/Mejoras/Papas/Papas_lvl_2.png"),new Image("Res/Mejoras/Papas/Papas_lvl_3.png")),
@@ -53,7 +53,7 @@ public class Model implements Observado{
             this.lvl3 = lvl3;
         }
         public enum Nivel{
-            INICIAL,MEDIO,AVANZADO;
+            INICIAL,MEDIO,AVANZADO
         }
 
         public void addCantidad(int i) throws IllegalArgumentException{
@@ -67,19 +67,15 @@ public class Model implements Observado{
         public int getCantidad(){
             return cantidad;
         }
-        public String getMejoraUrl(Nivel lvl){
-            switch (lvl){
-                case INICIAL:
-                    return lvl1.getUrl();
-                case MEDIO:
-                    return lvl2.getUrl();
-                case AVANZADO:
-                    return lvl3.getUrl();
-            }
-            return "";
+        public String getMejoraUrl(){
+            return switch (getCurrentLevel()) {
+                case INICIAL -> lvl1.getUrl();
+                case MEDIO -> lvl2.getUrl();
+                case AVANZADO -> lvl3.getUrl();
+            };
         }
         public int getCosto(){
-            int costo = 0;
+            int costo;
             if(cantidad == 0){
                 return costoBase;
             }
@@ -126,7 +122,7 @@ public class Model implements Observado{
 
     //*****************************************************************************
     //OBSERVABLE
-    private List<Observador> observadores = new ArrayList<Observador>();
+    private List<Observador> observadores = new ArrayList<>();
 
     @Override
     public void addObservador(Observador o) throws IllegalArgumentException{
@@ -197,7 +193,7 @@ public class Model implements Observado{
             addPanchoIdle(mejora.getPanchoIdleValue());
         }
         else{
-            String msj = "Necesitas tener: " + costoMejora + " panchos para comprar " + mejora + " nivel " + (String.valueOf(mejora.getCantidad()+1));
+            String msj = "Necesitas tener: " + costoMejora + " panchos para comprar " + mejora + " nivel " + (mejora.getCantidad()+1);
             setMensaje(msj);
         }
     }

@@ -72,4 +72,11 @@ public class Controlador {
     public void Pancho_onClick(){
         modelo.addPanchoClick(1);
     }
+    public void addPanchoIdle(){
+        modelo.addPancho(modelo.getPanchoIdle());
+    }
+    //METODOS VARIOS
+    public void printRandomMensaje(){
+        modelo.setMensaje(modelo.getRandomMessage());
+    }
 }
