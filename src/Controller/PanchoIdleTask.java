@@ -3,9 +3,9 @@ package src.Controller;
 import javafx.concurrent.Task;
 
 public class PanchoIdleTask extends Task {
-    MainViewController controlador;
+     Controlador controlador;
 
-    public PanchoIdleTask(MainViewController controller){
+    public PanchoIdleTask(Controlador controller){
         controlador = controller;
     }
     @Override

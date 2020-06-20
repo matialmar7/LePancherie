@@ -3,9 +3,9 @@ package src.Controller;
 import javafx.concurrent.Task;
 
 public class RandomMsj extends Task {
-    MainViewController controlador;
+    Controlador controlador;
 
-    public RandomMsj(MainViewController controller){
+    public RandomMsj(Controlador controller){
         controlador = controller;
     }
     @Override

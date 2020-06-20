@@ -20,16 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58289860-213b-4dbe-aa25-9314a6b13bb6" name="Default Changelist" comment="Controlador y modelo separado de la vista">
-      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Calle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Casa0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Feria.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Marte.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Orbita.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Plaza.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Restaurante.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Casa.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Casa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PanchoIdleTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PanchoIdleTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RandomMsj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RandomMsj.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

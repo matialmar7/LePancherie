@@ -2,11 +2,14 @@ package src.View;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import src.Controller.PanchoIdleTask;
+import src.Controller.RandomMsj;
 import src.Main;
 import src.Model.Observador;
 
@@ -14,6 +17,20 @@ public class MainView extends Application implements Observador {
     private FXMLLoader loader;
 
     private Label stockLbl;
+    private Task PanchoIdleTask = new PanchoIdleTask(src.Main.controlador);
+    private Task MessageRand = new RandomMsj(src.Main.controlador);
+
+    @Override
+    public void init() throws Exception {
+        Thread panchoIdle = new Thread(PanchoIdleTask);
+        panchoIdle.setDaemon(true);
+        panchoIdle.start();
+
+        Thread RandomMsj = new Thread(MessageRand);
+        RandomMsj.setDaemon(true);
+        RandomMsj.start();
+
+    }
 
 
     @Override
