@@ -4,11 +4,7 @@
     -fx-background-color: transparent;
     -fx-cursor: hand;
 }
-.Tooltip{
-    -fx-background-color: #FFFF96;
-    -fx-font-family: "Comic Sans MS";
-    -fx-text-fill: black;
-}
+
 .MejorasBtn:hover{
     -fx-background-size: 80%;
 }

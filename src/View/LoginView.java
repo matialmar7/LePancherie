@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import src.Controller.Controlador;
 import src.Controller.LoginController;
 import src.Model.Model;
@@ -31,8 +32,9 @@ public class LoginView {
         loginScene.getStylesheets().add(getClass().getResource("css/Login.css").toExternalForm());
         loginStage = new Stage();
         loginStage.setResizable(false);
-        loginStage.setTitle("LePancherie - Login");
+        //loginStage.setTitle("LePancherie - Login");
         loginStage.setScene(loginScene);
+        loginStage.initStyle(StageStyle.UNDECORATED);
         loginStage.initModality(Modality.APPLICATION_MODAL);
     }
 

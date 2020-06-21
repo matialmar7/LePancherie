@@ -33,3 +33,27 @@
 #PanchoBtn:pressed{
     -fx-background-size: 100%;
 }
+#CloseBtn{
+    -fx-background-image: url("../../Res/Interfaz/Botones/botonNoPresionado.png");
+    -fx-background-color: transparent;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 98%;
+}
+#CloseBtn:hover{
+    -fx-background-size: 100%;
+}
+#CloseBtn:pressed{
+    -fx-background-image: url("../../Res/Interfaz/Botones/botonPresionado.png");
+}
+#StatsBtn{
+    -fx-background-image: url("../../Res/Interfaz/Botones/botonStats.png");
+    -fx-background-color: transparent;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 98%;
+}
+#StatsBtn:hover{
+    -fx-background-size: 100%;
+}
+#StatsBtn:pressed{
+    -fx-background-image: url("../../Res/Interfaz/Botones/botonStats.png");
+}

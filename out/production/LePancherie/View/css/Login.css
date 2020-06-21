@@ -1,0 +1,39 @@
+#AnchorPane{
+    -fx-background-image: url("../../Res/Interfaz/Fondo_Login.png");
+    -fx-background-color: transparent;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+}
+#AliasTxt{
+    -fx-background-color: transparent;
+    -fx-cursor: text;
+}
+#Btn{
+    -fx-background-color: white;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-border-color: black;
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-weight: 800;
+    -fx-font-size: 12px;
+    -fx-text-fill: #d60a26;
+    -fx-cursor: hand;
+}
+#Btn:hover{
+    -fx-background-color: #d60a26 ;
+    -fx-text-fill: white;
+}
+#CloseBtn{
+    -fx-background-image: url("../../Res/Interfaz/Botones/botonNoPresionado.png");
+    -fx-background-color: transparent;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 98%;
+}
+#CloseBtn:hover{
+    -fx-background-size: 100%;
+}
+#CloseBtn:pressed{
+    -fx-background-image: url("../../Res/Interfaz/Botones/botonPresionado.png");
+}

@@ -35,6 +35,8 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
+            <Button id="CloseBtn" fx:id="closeBtn" layoutX="761.0" layoutY="8.0" mnemonicParsing="false" onAction="#Close_onClick" prefWidth="25.0" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="8.0" />
+            <Button id="StatsBtn" fx:id="statsBtn" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#Stats_onClick" prefWidth="25.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="8.0" />
          </children>
       </AnchorPane>
         <GridPane id="Mejoras_Grid" fx:id="Mejoras_Grid" layoutX="8.0" layoutY="504.0" prefHeight="200.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="400.0">
