@@ -73,7 +73,7 @@ public class Controlador {
         modelo.addPanchoClick(1);
     }
     public void addPanchoIdle(){
-        modelo.addPancho(modelo.getPanchoIdle());
+        modelo.addPancho(modelo.getPanchoIdle()/10);
     }
     //METODOS VARIOS
     public void printRandomMensaje(){

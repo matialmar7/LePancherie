@@ -124,6 +124,7 @@ public class MainView extends Application implements Observador {
         Caja = (Button) scene.lookup("#Caja");
         Empleados = (Button) scene.lookup("#Empleados");
         Sucursales = (Button) scene.lookup("#Sucursales");
+        Main.modelo.inicializarMejoras();
 
         //Inicializo los valores en las labels
         updateLabels();
@@ -158,7 +159,7 @@ public class MainView extends Application implements Observador {
         //ACTUALIZO LABELS STOCKS, PANCHOS/S, MEJORAS
         msjBanner.setText(src.Main.modelo.getMensaje());
         stockLbl.setText(String.valueOf(src.Main.modelo.getPanchos()));
-        panchosLbl.setText(String.format("%.0f", src.Main.modelo.getPanchoIdle()*10) + " panchos/s");
+        panchosLbl.setText(String.format("%.2f", src.Main.modelo.getPanchoIdle()) + " panchos/s");
         //Cantidades
         cursorLbl.setText(Integer.toString(Model.Mejoras.CURSORES.getCantidad()));
         condimentosLbl.setText(Integer.toString(Model.Mejoras.CONDIMENTOS.getCantidad()));
@@ -171,16 +172,16 @@ public class MainView extends Application implements Observador {
         empleadosLbl.setText(Integer.toString(Model.Mejoras.EMPLEADOS.getCantidad()));
         sucursalesLvl.setText(Integer.toString(Model.Mejoras.SUCURSALES.getCantidad()));
         //Costos
-        cursorCostLbl.setText(Integer.toString(Model.Mejoras.CURSORES.getCosto()));
-        condimenttosCostLbl.setText(Integer.toString(Model.Mejoras.CONDIMENTOS.getCosto()));
-        papasCostLbl.setText(Integer.toString(Model.Mejoras.PAPAS.getCosto()));
-        bebidasCostLbl.setText(Integer.toString(Model.Mejoras.BEBIDAS.getCosto()));
-        parrillasCostLbl.setText(Integer.toString(Model.Mejoras.PARRILLAS.getCosto()));
-        salchicherasCostLbl.setText(Integer.toString(Model.Mejoras.SALCHICHERA.getCosto()));
-        heladerasCostLbl.setText(Integer.toString(Model.Mejoras.HELADERA.getCosto()));
-        cajaCostLbl.setText(Integer.toString(Model.Mejoras.CAJA_REGISTRADORA.getCosto()));
-        empleadosCostLbl.setText(Integer.toString(Model.Mejoras.EMPLEADOS.getCosto()));
-        sucursalesCostLbl.setText(Integer.toString(Model.Mejoras.SUCURSALES.getCosto()));
+        cursorCostLbl.setText(String.valueOf(Model.Mejoras.CURSORES.getCosto()));
+        condimenttosCostLbl.setText(String.valueOf(Model.Mejoras.CONDIMENTOS.getCosto()));
+        papasCostLbl.setText(String.valueOf(Model.Mejoras.PAPAS.getCosto()));
+        bebidasCostLbl.setText(String.valueOf(Model.Mejoras.BEBIDAS.getCosto()));
+        parrillasCostLbl.setText(String.valueOf(Model.Mejoras.PARRILLAS.getCosto()));
+        salchicherasCostLbl.setText(String.valueOf(Model.Mejoras.SALCHICHERA.getCosto()));
+        heladerasCostLbl.setText(String.valueOf(Model.Mejoras.HELADERA.getCosto()));
+        cajaCostLbl.setText(String.valueOf(Model.Mejoras.CAJA_REGISTRADORA.getCosto()));
+        empleadosCostLbl.setText(String.valueOf(Model.Mejoras.EMPLEADOS.getCosto()));
+        sucursalesCostLbl.setText(String.valueOf(Model.Mejoras.SUCURSALES.getCosto()));
 
     }
     private void updateMejoras(){
