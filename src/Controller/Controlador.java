@@ -36,7 +36,6 @@ public class Controlador {
     private Button SucursalesBtn;
 
     //METODOS CURSORES
-
     public void Cursor_onClick(ActionEvent event){
         modelo.comprarMejora(Model.Mejoras.CURSORES);
     }

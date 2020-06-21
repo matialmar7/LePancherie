@@ -1,22 +1,25 @@
 package src.View;
 
-import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import src.Controller.PanchoIdleTask;
-import src.Controller.RandomMsj;
+import src.Controller.Controlador;
 import src.Main;
 import src.Model.Model;
 import src.Model.Observador;
 
-public class MainView extends Application implements Observador {
+import java.io.IOException;
+
+public class MainView implements Observador {
     private FXMLLoader loader;
+    private Stage primaryStage;
+    private Model modelo;
+    private Controlador controlador;
+
     //ELEMENTOS DE INTERFAZ A UPDATEAR
     private Label msjBanner;
     //Mostrador de stock y panchos/s
@@ -56,33 +59,19 @@ public class MainView extends Application implements Observador {
     private Button Empleados;
     private Button Sucursales;
 
-    private Task PanchoIdleTask = new PanchoIdleTask(src.Main.controlador);
-    private Task MessageRand = new RandomMsj(src.Main.controlador);
-
-    @Override
-    public void init(){
-        Thread panchoIdle = new Thread(PanchoIdleTask);
-        panchoIdle.setDaemon(true);
-        panchoIdle.start();
-
-        Thread RandomMsj = new Thread(MessageRand);
-        RandomMsj.setDaemon(true);
-        RandomMsj.start();
-
-    }
 
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    public MainView(Model mod, Controlador cont) throws IOException {
+        modelo = mod;
+        controlador = cont;
 
+        //Cargo ventana principal
         loader = new FXMLLoader(getClass().getResource("MainView.fxml"));
-
-        loader.setController(src.Main.controlador);
-
+        loader.setController(controlador);
         Parent root = loader.load();
 
         //SUBSCRIBO OBSERVADOR
-        Main.modelo.addObservador(this);
+        modelo.addObservador(this);
 
         Scene scene = new Scene(root);
 
@@ -132,16 +121,10 @@ public class MainView extends Application implements Observador {
         scene.getStylesheets().add(getClass().getResource("css/Interfaz.css").toExternalForm());
         scene.getStylesheets().add(getClass().getResource("css/Texto.css").toExternalForm());
         scene.getStylesheets().add(getClass().getResource("css/Mejoras.css").toExternalForm());
+        primaryStage = new Stage();
         primaryStage.setResizable(false);
         primaryStage.setTitle("Le Pancherie");
         primaryStage.setScene(scene);
-        primaryStage.show();
-
-    }
-
-    @Override
-    public void stop() throws Exception {
-        super.stop();
     }
 
     @Override
@@ -154,11 +137,14 @@ public class MainView extends Application implements Observador {
             }
         });
     }
+    public Stage getStage(){
+        return primaryStage;
+    }
     private void updateLabels(){
         //ACTUALIZO LABELS STOCKS, PANCHOS/S, MEJORAS
-        msjBanner.setText(src.Main.modelo.getMensaje());
-        stockLbl.setText(String.valueOf(src.Main.modelo.getPanchos()));
-        panchosLbl.setText(String.format("%.0f", src.Main.modelo.getPanchoIdle()*10) + " panchos/s");
+        msjBanner.setText(modelo.getMensaje());
+        stockLbl.setText(String.valueOf(modelo.getPanchos()));
+        panchosLbl.setText(String.format("%.0f", modelo.getPanchoIdle()*10) + " panchos/s");
         //Cantidades
         cursorLbl.setText(Integer.toString(Model.Mejoras.CURSORES.getCantidad()));
         condimentosLbl.setText(Integer.toString(Model.Mejoras.CONDIMENTOS.getCantidad()));
@@ -195,5 +181,7 @@ public class MainView extends Application implements Observador {
         Empleados.setStyle(String.format("-fx-background-image: url(%s);", Model.Mejoras.EMPLEADOS.getMejoraUrl()));
         Sucursales.setStyle(String.format("-fx-background-image: url(%s);", Model.Mejoras.SUCURSALES.getMejoraUrl()));
     }
+
+
 }
 

@@ -19,17 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58289860-213b-4dbe-aa25-9314a6b13bb6" name="Default Changelist" comment="Controlador y modelo separado de la vista">
-      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Calle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Casa0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Feria.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Marte.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Orbita.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Plaza.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Restaurante.png" afterDir="false" />
+    <list default="true" id="58289860-213b-4dbe-aa25-9314a6b13bb6" name="Default Changelist" comment="Mejoras listas">
+      <change afterPath="$PROJECT_DIR$/src/View/css/Login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Casa.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondos/Fondo_Casa.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,9 +78,9 @@
         <option value="JavaFXApplication" />
         <option value="Enum" />
         <option value="FxmlFile" />
-        <option value="CSS File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -111,7 +105,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="GUI" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -289,6 +283,9 @@
       <workItem from="1592587240834" duration="3835000" />
       <workItem from="1592613943065" duration="678000" />
       <workItem from="1592673576751" duration="296000" />
+      <workItem from="1592702178271" duration="1389000" />
+      <workItem from="1592703973437" duration="606000" />
+      <workItem from="1592705114863" duration="482000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Inicial">
       <created>1588453022107</created>
@@ -486,7 +483,28 @@
       <option name="project" value="LOCAL" />
       <updated>1592615746490</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Controlador y modelo separado de la vista">
+      <created>1592674134485</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1592674134485</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Merge">
+      <created>1592677024163</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1592677024163</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Mejoras listas">
+      <created>1592677040895</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1592677040895</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +541,9 @@
     <MESSAGE value="Añado ilustraciones, Pongo sistema de actualizacion de graficos mejoras y display panchos/s" />
     <MESSAGE value="Mejoras" />
     <MESSAGE value="Controlador y modelo separado de la vista" />
-    <option name="LAST_COMMIT_MESSAGE" value="Controlador y modelo separado de la vista" />
+    <MESSAGE value="Merge" />
+    <MESSAGE value="Mejoras listas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mejoras listas" />
   </component>
   <component name="WindowStateProjectService">
     <state x="346" y="108" key="#Inspections" timestamp="1588545699410">
@@ -574,22 +594,22 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="593" y="328" key="Github.ShareDialog/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1591498210163" />
-    <state width="1397" height="210" key="GridCell.Tab.0.bottom" timestamp="1592624335163">
+    <state width="1397" height="210" key="GridCell.Tab.0.bottom" timestamp="1592678048944">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.bottom/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592624335163" />
-    <state width="1397" height="210" key="GridCell.Tab.0.center" timestamp="1592624335163">
+    <state width="1397" height="210" key="GridCell.Tab.0.bottom/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592678048944" />
+    <state width="1397" height="210" key="GridCell.Tab.0.center" timestamp="1592678048943">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.center/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592624335163" />
-    <state width="1397" height="210" key="GridCell.Tab.0.left" timestamp="1592624335163">
+    <state width="1397" height="210" key="GridCell.Tab.0.center/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592678048943" />
+    <state width="1397" height="210" key="GridCell.Tab.0.left" timestamp="1592678048943">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.left/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592624335163" />
-    <state width="1397" height="210" key="GridCell.Tab.0.right" timestamp="1592624335163">
+    <state width="1397" height="210" key="GridCell.Tab.0.left/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592678048943" />
+    <state width="1397" height="210" key="GridCell.Tab.0.right" timestamp="1592678048943">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.right/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592624335163" />
+    <state width="1397" height="210" key="GridCell.Tab.0.right/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592678048943" />
     <state width="1397" height="276" key="GridCell.Tab.1.bottom" timestamp="1588552067122">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -610,10 +630,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="206" y="72" width="999" height="710" key="SettingsEditor/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1591564001120" />
-    <state x="312" y="163" key="Vcs.Push.Dialog.v2" timestamp="1592616090966">
+    <state x="312" y="163" key="Vcs.Push.Dialog.v2" timestamp="1592677045187">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="312" y="163" key="Vcs.Push.Dialog.v2/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592616090966" />
+    <state x="312" y="163" key="Vcs.Push.Dialog.v2/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592677045187" />
     <state x="359" y="159" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588453355448">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

@@ -22,6 +22,7 @@ public class Model implements Observado{
             "EL PANCHO MAS LARGO DEL MUNDO TIENE 203 METROS Y PESA 120KGs",
             };
     private static long PanchoClickTimestamp = System.currentTimeMillis();
+    //Valores de configuracion mejoras
 
     public enum Mejoras{
         CURSORES(10,0.075,new Image("Res/Mejoras/Cursores/Cursores_lvl_1.png"),new Image("Res/Mejoras/Cursores/Cursores_lvl_2.png"),new Image("Res/Mejoras/Cursores/Cursores_lvl_3.png")),
@@ -34,6 +35,9 @@ public class Model implements Observado{
         CAJA_REGISTRADORA(1,1,new Image("Res/Mejoras/Caja_Registradora/Caja_Registradora_lvl_1.png"),new Image("Res/Mejoras/Caja_Registradora/Cajas_Registradora_lvl_2.png"),new Image("Res/Mejoras/Caja_Registradora/Cajas_Registradora_lvl_3.png")),
         EMPLEADOS(1,1,new Image("Res/Mejoras/Empleados/Empleados_lvl_1.png"),new Image("Res/Mejoras/Empleados/Empleados_lvl_2.png"),new Image("Res/Mejoras/Empleados/Empleados_lvl_3.png")),
         SUCURSALES(1,1,new Image("Res/Mejoras/Sucursales/Sucursales_lvl_1.png"),new Image("Res/Mejoras/Sucursales/Sucursales_lvl_2.png"),new Image("Res/Mejoras/Sucursales/Sucursales_lvl_3.png"));
+        public enum Nivel{
+            INICIAL,MEDIO,AVANZADO
+        }
 
         private int cantidad;
         private int costoBase;
@@ -51,9 +55,6 @@ public class Model implements Observado{
             this.lvl1 = lvl1;
             this.lvl2 = lvl2;
             this.lvl3 = lvl3;
-        }
-        public enum Nivel{
-            INICIAL,MEDIO,AVANZADO
         }
 
         public void addCantidad(int i) throws IllegalArgumentException{
@@ -76,7 +77,7 @@ public class Model implements Observado{
                     return lvl2.getUrl();
                 case AVANZADO:
                     return lvl3.getUrl();
-            };
+            }
             return lvl1.getUrl();
         }
         public int getCosto(){
