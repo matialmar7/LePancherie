@@ -19,14 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58289860-213b-4dbe-aa25-9314a6b13bb6" name="Default Changelist" comment="Añado vista y controlador de Login. sin graficos">
-      <change afterPath="$PROJECT_DIR$/src/Res/Interfaz/Fondo_Login.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LePancherie/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LePancherie/src/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/LoginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/LoginView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/css/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/css/Login.css" afterDir="false" />
-    </list>
+    <list default="true" id="58289860-213b-4dbe-aa25-9314a6b13bb6" name="Default Changelist" comment="Añado vista estadistica y botones varios" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,8 +73,8 @@
         <option value="Enum" />
         <option value="FxmlFile" />
         <option value="Interface" />
-        <option value="CSS File" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -106,7 +99,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="vistaEstadistica" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -287,7 +280,7 @@
       <workItem from="1592702178271" duration="1389000" />
       <workItem from="1592703973437" duration="606000" />
       <workItem from="1592705114863" duration="4439000" />
-      <workItem from="1592762525422" duration="834000" />
+      <workItem from="1592762525422" duration="5851000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Inicial">
       <created>1588453022107</created>
@@ -545,7 +538,8 @@
     <MESSAGE value="Controlador y modelo separado de la vista" />
     <MESSAGE value="Merge" />
     <MESSAGE value="Mejoras listas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mejoras listas" />
+    <MESSAGE value="Añado vista estadistica y botones varios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añado vista estadistica y botones varios" />
   </component>
   <component name="WindowStateProjectService">
     <state x="346" y="108" key="#Inspections" timestamp="1588545699410">
@@ -596,22 +590,22 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="593" y="328" key="Github.ShareDialog/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1591498210163" />
-    <state width="1397" height="210" key="GridCell.Tab.0.bottom" timestamp="1592711733410">
+    <state width="1397" height="210" key="GridCell.Tab.0.bottom" timestamp="1592768892404">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.bottom/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592711733410" />
-    <state width="1397" height="210" key="GridCell.Tab.0.center" timestamp="1592711733409">
+    <state width="1397" height="210" key="GridCell.Tab.0.bottom/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592768892404" />
+    <state width="1397" height="210" key="GridCell.Tab.0.center" timestamp="1592768892404">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.center/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592711733409" />
-    <state width="1397" height="210" key="GridCell.Tab.0.left" timestamp="1592711733409">
+    <state width="1397" height="210" key="GridCell.Tab.0.center/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592768892404" />
+    <state width="1397" height="210" key="GridCell.Tab.0.left" timestamp="1592768892403">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.left/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592711733409" />
-    <state width="1397" height="210" key="GridCell.Tab.0.right" timestamp="1592711733409">
+    <state width="1397" height="210" key="GridCell.Tab.0.left/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592768892403" />
+    <state width="1397" height="210" key="GridCell.Tab.0.right" timestamp="1592768892404">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="210" key="GridCell.Tab.0.right/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592711733409" />
+    <state width="1397" height="210" key="GridCell.Tab.0.right/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592768892404" />
     <state width="1397" height="276" key="GridCell.Tab.1.bottom" timestamp="1588552067122">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -632,10 +626,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="206" y="72" width="999" height="710" key="SettingsEditor/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1591564001120" />
-    <state x="312" y="163" key="Vcs.Push.Dialog.v2" timestamp="1592709819409">
+    <state x="312" y="163" key="Vcs.Push.Dialog.v2" timestamp="1592768678557">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="312" y="163" key="Vcs.Push.Dialog.v2/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592709819409" />
+    <state x="312" y="163" key="Vcs.Push.Dialog.v2/1440.138.1360.728/0.0.1440.860@0.0.1440.860" timestamp="1592768678557" />
     <state x="359" y="159" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588453355448">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
