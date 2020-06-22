@@ -3,6 +3,8 @@ package src.Controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
+import src.Main;
 import src.Model.Model;
 
 public class Controlador {
@@ -34,9 +36,13 @@ public class Controlador {
     private Button EmpleadosBtn;
     @FXML
     private Button SucursalesBtn;
+    //Menu
+    @FXML
+    private Button closeBtn;
+    @FXML
+    private Button statsBtn;
 
     //METODOS CURSORES
-
     public void Cursor_onClick(ActionEvent event){
         modelo.comprarMejora(Model.Mejoras.CURSORES);
     }
@@ -78,5 +84,14 @@ public class Controlador {
     //METODOS VARIOS
     public void printRandomMensaje(){
         modelo.setMensaje(modelo.getRandomMessage());
+    }
+    //METODOS MENU
+    public void Close_onClick(ActionEvent e){
+        modelo.savePlayerData();
+        Stage stage = (Stage)closeBtn.getScene().getWindow();
+        stage.close();
+    }
+    public void Stats_onClick(ActionEvent e){
+        Main.getStatsView().getStage().show();
     }
 }

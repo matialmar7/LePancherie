@@ -4,17 +4,19 @@ import javafx.scene.image.Image;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.lang.System;
 import java.util.Scanner;
 
-
 public class Model implements Observado{
 
     private static double StockPanchos = 0;
     private static double PanchoIdle = 0;
+    private String Alias = "";
     private static String mensaje = "LOS PANCHOS SON BUENOS PARA LA SALUD";
     private static String[] Mensajes = {
             "LOS PANCHOS SON BUENOS PARA LA SALUD",
@@ -26,59 +28,55 @@ public class Model implements Observado{
             "EL PANCHO MAS LARGO DEL MUNDO TIENE 203 METROS Y PESA 120KGs",
             };
 
-
-    public Model(){
-    }
-
     private static long PanchoClickTimestamp = System.currentTimeMillis();
 
+    //WEAS PARA CARGA DE ARCHIVO
+    private int[] cantidadMejoras = new int[10];
+    String pesho = "pesho.txt";
+    private File file = null;
+
+    //WEAS PARA CARGAR LAS MEJROAS
     private int costos_base [] = new int[10];
     private double prod_base [] = new double[10];
     private double taz_crec [] = new double[10];
     private double[] multiplier = new double[10];
-    private int counter = 0;
-    private int counter2 = 0;
 
 
+    //Valores de configuracion mejoras
 
     public enum Mejoras{
-
-
-        CURSORES(15,100,1.75,1,new Image("Res/Mejoras/Cursores/Cursores_lvl_1.png"),new Image("Res/Mejoras/Cursores/Cursores_lvl_2.png"),new Image("Res/Mejoras/Cursores/Cursores_lvl_3.png")),
-        CONDIMENTOS(90,10,1,1, new Image("Res/Mejoras/Condimentos/Condimentos_lvl_1.png"),new Image("Res/Mejoras/Condimentos/Condimentos_lvl_2.png"),new Image("Res/Mejoras/Condimentos/Condimentos_lvl_3.png")),
-        PAPAS(600,100,1,1,new Image("Res/Mejoras/Papas/Papas_lvl_1.png"),new Image("Res/Mejoras/Papas/Papas_lvl_2.png"),new Image("Res/Mejoras/Papas/Papas_lvl_3.png")),
-        BEBIDAS(6000,1000,1,1,new Image("Res/Mejoras/Bebidas/Bebidas_lvl_1.png"),new Image("Res/Mejoras/Bebidas/Bebidas_lvl_2.png"),new Image("Res/Mejoras/Bebidas/Bebidas_lvl_3.png")),
-        PARRILLAS(60000,10000,1,1,new Image("Res/Mejoras/Parrillas/Parilla_lvl_1.png"),new Image("Res/Mejoras/Parrillas/Parilla_lvl_2.png"),new Image("Res/Mejoras/Parrillas/Parilla_lvl_3.png")),
-        SALCHICHERA(1,100000,1,1,new Image("Res/Mejoras/Salchichera/Salchichera_lvl_1.png"),new Image("Res/Mejoras/Salchichera/Salchichera_lvl_2.png"),new Image("Res/Mejoras/Salchichera/Salchichera_lvl_3.png")),
-        HELADERA(1,10000000,1,1,new Image("Res/Mejoras/Heladeras/Heladeras_lvl_1.png"),new Image("Res/Mejoras/Heladeras/Heladeras_lvl_2.png"),new Image("Res/Mejoras/Heladeras/Heladeras_lvl_3.png")),
-        CAJA_REGISTRADORA(1000000,1,1,1,new Image("Res/Mejoras/Caja_Registradora/Caja_Registradora_lvl_1.png"),new Image("Res/Mejoras/Caja_Registradora/Cajas_Registradora_lvl_2.png"),new Image("Res/Mejoras/Caja_Registradora/Cajas_Registradora_lvl_3.png")),
-        EMPLEADOS(1,1,1,1,new Image("Res/Mejoras/Empleados/Empleados_lvl_1.png"),new Image("Res/Mejoras/Empleados/Empleados_lvl_2.png"),new Image("Res/Mejoras/Empleados/Empleados_lvl_3.png")),
-        SUCURSALES(1,1,1,1,new Image("Res/Mejoras/Sucursales/Sucursales_lvl_1.png"),new Image("Res/Mejoras/Sucursales/Sucursales_lvl_2.png"),new Image("Res/Mejoras/Sucursales/Sucursales_lvl_3.png"));
-
+        CURSORES(1,3,0.075,new Image("Res/Mejoras/Cursores/Cursores_lvl_1.png"),new Image("Res/Mejoras/Cursores/Cursores_lvl_2.png"),new Image("Res/Mejoras/Cursores/Cursores_lvl_3.png")),
+        CONDIMENTOS(2,1,1, new Image("Res/Mejoras/Condimentos/Condimentos_lvl_1.png"),new Image("Res/Mejoras/Condimentos/Condimentos_lvl_2.png"),new Image("Res/Mejoras/Condimentos/Condimentos_lvl_3.png")),
+        PAPAS(3,1,1,new Image("Res/Mejoras/Papas/Papas_lvl_1.png"),new Image("Res/Mejoras/Papas/Papas_lvl_2.png"),new Image("Res/Mejoras/Papas/Papas_lvl_3.png")),
+        BEBIDAS(4,1,1,new Image("Res/Mejoras/Bebidas/Bebidas_lvl_1.png"),new Image("Res/Mejoras/Bebidas/Bebidas_lvl_2.png"),new Image("Res/Mejoras/Bebidas/Bebidas_lvl_3.png")),
+        PARRILLAS(5,1,1,new Image("Res/Mejoras/Parrillas/Parilla_lvl_1.png"),new Image("Res/Mejoras/Parrillas/Parilla_lvl_2.png"),new Image("Res/Mejoras/Parrillas/Parilla_lvl_3.png")),
+        SALCHICHERA(6,1,1,new Image("Res/Mejoras/Salchichera/Salchichera_lvl_1.png"),new Image("Res/Mejoras/Salchichera/Salchichera_lvl_2.png"),new Image("Res/Mejoras/Salchichera/Salchichera_lvl_3.png")),
+        HELADERA(7,1,1,new Image("Res/Mejoras/Heladeras/Heladeras_lvl_1.png"),new Image("Res/Mejoras/Heladeras/Heladeras_lvl_2.png"),new Image("Res/Mejoras/Heladeras/Heladeras_lvl_3.png")),
+        CAJA_REGISTRADORA(8,1,1,new Image("Res/Mejoras/Caja_Registradora/Caja_Registradora_lvl_1.png"),new Image("Res/Mejoras/Caja_Registradora/Cajas_Registradora_lvl_2.png"),new Image("Res/Mejoras/Caja_Registradora/Cajas_Registradora_lvl_3.png")),
+        EMPLEADOS(9,1,1,new Image("Res/Mejoras/Empleados/Empleados_lvl_1.png"),new Image("Res/Mejoras/Empleados/Empleados_lvl_2.png"),new Image("Res/Mejoras/Empleados/Empleados_lvl_3.png")),
+        SUCURSALES(10,1,1,new Image("Res/Mejoras/Sucursales/Sucursales_lvl_1.png"),new Image("Res/Mejoras/Sucursales/Sucursales_lvl_2.png"),new Image("Res/Mejoras/Sucursales/Sucursales_lvl_3.png"));
+        public enum Nivel{
+            INICIAL,MEDIO,AVANZADO
+        }
 
         private int cantidad;
-        private double costoBasee;
         private double prodBase;
+        private int costoBase;
         private double growthRate;
-        private double multiplier;
         private Nivel currentLvl;
         private Image lvl1;
         private Image lvl2;
         private Image lvl3;
 
-        Mejoras(double costoBasee,double prodBase,double costGrowth,double multiplier, Image lvl1, Image lvl2, Image lvl3 ){
+        Mejoras(int costoBase, double prodBase ,double costGrowth, Image lvl1, Image lvl2, Image lvl3 ){
             cantidad = 0;
             growthRate = costGrowth;
             currentLvl = Nivel.INICIAL;
-            this.costoBasee = costoBasee;
             this.prodBase = prodBase;
-            this.multiplier=multiplier;
+            this.costoBase = costoBase;
             this.lvl1 = lvl1;
             this.lvl2 = lvl2;
             this.lvl3 = lvl3;
-        }
-        public enum Nivel{
-            INICIAL,MEDIO,AVANZADO
         }
 
         public void addCantidad(int i) throws IllegalArgumentException{
@@ -89,6 +87,11 @@ public class Model implements Observado{
                 cantidad += i;
             }
         }
+
+        public double getProdBase() {
+            return prodBase;
+        }
+
         public int getCantidad(){
             return cantidad;
         }
@@ -101,12 +104,18 @@ public class Model implements Observado{
                     return lvl2.getUrl();
                 case AVANZADO:
                     return lvl3.getUrl();
-            };
+            }
             return lvl1.getUrl();
         }
-        public double getCosto(){
-
-            return (int) (((cantidad * growthRate)+1) * costoBasee);
+        public int getCosto(){
+            int costo;
+            if(cantidad == 0){
+                return costoBase;
+            }
+            else {
+                costo = (int) (((cantidad * growthRate) +1) * costoBase);
+            }
+            return costo;
         }
         public void updateLevel(){
             int cantidadLvl2 = 75;
@@ -122,14 +131,9 @@ public class Model implements Observado{
         public Nivel getCurrentLevel(){
             return currentLvl;
         }
-        //CAMBIAR
-        public double getPanchoIdleValue(){
-            System.out.println(this.prodBase);
-            System.out.println(this.cantidad);
-            return this.cantidad*this.prodBase; //ESTO ES CUALQUIER PELOTUDES
-        }
+
         public void setCostoBase(double costo){
-            this.costoBasee=costo;
+            this.costoBase= (int) costo;
         }
         public void setGrowthRate(double taza){
             this.growthRate=taza;
@@ -137,12 +141,6 @@ public class Model implements Observado{
         public void setProdBase(double prod){
             this.prodBase=prod;
         }
-        public void setMultiplier(double multi){
-            this.multiplier=multi;
-        }
-
-
-
     }
     private enum Fondos{
         CALLE(new Image("Res/Interfaz/Fondos/Fondo_Calle.png"),0),
@@ -164,11 +162,6 @@ public class Model implements Observado{
     //*****************************************************************************
     //OBSERVABLE
     private List<Observador> observadores = new ArrayList<>();
-
-
-    public double getCostBase(int i){
-        return costos_base[i];
-    }
 
     @Override
     public void addObservador(Observador o) throws IllegalArgumentException{
@@ -201,15 +194,13 @@ public class Model implements Observado{
     private boolean validarClick(long timestamp){
         return (timestamp - PanchoClickTimestamp) >= 100;
     }
-    private void takePanchos(double i){
-        if(StockPanchos>= i){
+
+    private void takePanchos(int i){
             StockPanchos -= i;
             notificar(observadores.get(0));
-        }
-        else{
-            System.out.println("Debe insertar un numero de panchos menor al stock actual");
-        }
     }
+
+    /*ACA LE SUMO i AL STOCK DE PANCHOS*/
     public void addPancho(double i){
         if(i>0)
         {
@@ -217,6 +208,8 @@ public class Model implements Observado{
             notificar(observadores.get(0));
         }
     }
+
+    /*ENTRO CON UN VALOR i Y LE ADDPANCHO(i)*/
     public void addPanchoClick(double i){
         long timestamp = System.currentTimeMillis();
         if(validarClick(timestamp)){
@@ -227,27 +220,24 @@ public class Model implements Observado{
             setMensaje("PARA UN POCO ESTAS YENDO DEMASIADO RAPIDO!!");
         }
     }
-    /*public void addPanchoIdle(double val){
-        PanchoIdle = val;
-    }*/
+    public void setPanchoIdle(){
+        PanchoIdle = 0;
+        for(Mejoras m : Mejoras.values()){
+            PanchoIdle += m.getCantidad()*m.getProdBase();
+        }
+    }
+
     public void comprarMejora(Mejoras mejora){
-        double costoMejora = mejora.getCosto();
+        int costoMejora = mejora.getCosto();
         if(StockPanchos >= costoMejora){
             mejora.addCantidad(1);
             mejora.updateLevel();
             takePanchos(costoMejora);
-            updatePanchoIdle();
+            this.setPanchoIdle();
         }
         else{
             String msj = "Necesitas tener: " + costoMejora + " panchos para comprar " + mejora + " nivel " + (mejora.getCantidad()+1);
             setMensaje(msj);
-        }
-    }
-
-    private void updatePanchoIdle() {
-        PanchoIdle = 0;
-        for(Mejoras m : Mejoras.values()){
-            PanchoIdle += m.prodBase*m.cantidad;
         }
     }
 
@@ -257,31 +247,81 @@ public class Model implements Observado{
     public double getPanchoIdle(){
         return PanchoIdle;
     }
-    public String getMensaje(){
-        return mensaje;
+
+    public void setAlias(String a){
+        this.Alias = a;
     }
-    public String getRandomMessage(){ //hacer privado
-        Random rand = new Random();
-        return Mensajes[rand.nextInt(Mensajes.length)]; //Elijo mensaje aleatorio
+
+    public void loadPlayerData(){
+        this.checkFile();   //VEO SI EL ARCHIVO EXISTE Y SINO CREO
+        System.out.println("Estoy Cargando la partida de: " + this.Alias);
+        Scanner lector = null;
+        String line;
+        int i = 0;
+        try {
+            lector = new Scanner(file);
+            line = lector.nextLine();
+            this.addPancho(Integer.parseInt(line.trim()));
+
+            for(Mejoras m : Mejoras.values()){
+                if(lector.hasNextLine()){
+                    line = lector.nextLine();
+                    if(Integer.parseInt(line.trim()) > 200){
+                        m.cantidad = 1;
+                    }
+                    else{
+                        m.cantidad = Integer.parseInt(line.trim());
+                        m.updateLevel();
+                    }
+                }
+            }
+            this.setPanchoIdle();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        lector.close();
+        notificarTodos();
     }
-    public void setMensaje(String msj){
-        mensaje = msj;
-        //notificar(observadores.get(0));
+
+    public void savePlayerData(){
+        try {
+            FileWriter writer = new FileWriter(file);
+            writer.write(""+ this.getPanchos()+"\n");
+            for(Mejoras m : Mejoras.values()){
+                writer.write(m.getCantidad() + "\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void checkFile(){
+        String pato = this.Alias + ".txt";
+        file = new File(pato);  //file ES EL ARCHIVO SOBRE EL CUAL VOY A TRABAJAR
+        try {
+            if(file.createNewFile()){   //SI file NO EXISTE LO CREO
+                FileWriter writer = new FileWriter(file);
+                writer.write(""+0);
+                writer.close();
+            }
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+        }
     }
     public void inicializarMejoras(){
         try {
             int counter = 0;
             int counter2 = 0;
-            File myObj = new File("D:/Google_Drive/Falcultad/Ing Software/Lepancherie/src/Model/Tazas_de_creci.txt");
+            File myObj = new File("Tazas_de_creci.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                //System.out.println(data);
 
                 if(data.contains("//")){
                     data = myReader.nextLine();
                 }
-                System.out.println(data);
                 if(counter == 10 || counter == 20||counter == 30){
                     counter2 = 0;
                 }
@@ -302,8 +342,6 @@ public class Model implements Observado{
                     counter2++;
                 }
                 counter++;
-
-                //System.out.println(data);
             }
             myReader.close();
         } catch (FileNotFoundException e) {
@@ -317,9 +355,22 @@ public class Model implements Observado{
             m.setCostoBase(costos_base[h]);
             m.setProdBase(prod_base[h]);
             m.setGrowthRate(taz_crec[h]);
-            m.setMultiplier(multiplier[h]);
+            //m.setMultiplier(multiplier[h]);
             h++;
 
         }
+    }
+    /*ESTO SE ENCARGA DEL MSJ QUE SE ENCUENTRA EN LA BARRA SUPERIOR*/
+    public String getMensaje(){
+        return mensaje;
+    }
+    public String getRandomMessage(){ //hacer privado
+        Random rand = new Random();
+        return Mensajes[rand.nextInt(Mensajes.length)]; //Elijo mensaje aleatorio
+    }
+
+    public void setMensaje(String msj){
+        mensaje = msj;
+        //notificar(observadores.get(0));
     }
 }

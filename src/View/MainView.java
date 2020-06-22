@@ -1,22 +1,26 @@
 package src.View;
 
-import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import src.Controller.PanchoIdleTask;
-import src.Controller.RandomMsj;
-import src.Main;
+import javafx.stage.StageStyle;
+import src.Controller.Controlador;
 import src.Model.Model;
 import src.Model.Observador;
 
-public class MainView extends Application implements Observador {
+import java.io.IOException;
+
+public class MainView implements Observador {
     private FXMLLoader loader;
+    private Stage primaryStage;
+    private Model modelo;
+    private Controlador controlador;
+
     //ELEMENTOS DE INTERFAZ A UPDATEAR
     private Label msjBanner;
     //Mostrador de stock y panchos/s
@@ -56,33 +60,19 @@ public class MainView extends Application implements Observador {
     private Button Empleados;
     private Button Sucursales;
 
-    private Task PanchoIdleTask = new PanchoIdleTask(src.Main.controlador);
-    private Task MessageRand = new RandomMsj(src.Main.controlador);
-
-    @Override
-    public void init(){
-        Thread panchoIdle = new Thread(PanchoIdleTask);
-        panchoIdle.setDaemon(true);
-        panchoIdle.start();
-
-        Thread RandomMsj = new Thread(MessageRand);
-        RandomMsj.setDaemon(true);
-        RandomMsj.start();
-
-    }
 
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    public MainView(Model mod, Controlador cont) throws IOException {
+        modelo = mod;
+        controlador = cont;
 
+        //Cargo ventana principal
         loader = new FXMLLoader(getClass().getResource("MainView.fxml"));
-
-        loader.setController(src.Main.controlador);
-
+        loader.setController(controlador);
         Parent root = loader.load();
 
         //SUBSCRIBO OBSERVADOR
-        Main.modelo.addObservador(this);
+        modelo.addObservador(this);
 
         Scene scene = new Scene(root);
 
@@ -124,7 +114,6 @@ public class MainView extends Application implements Observador {
         Caja = (Button) scene.lookup("#Caja");
         Empleados = (Button) scene.lookup("#Empleados");
         Sucursales = (Button) scene.lookup("#Sucursales");
-        Main.modelo.inicializarMejoras();
 
         //Inicializo los valores en las labels
         updateLabels();
@@ -133,16 +122,13 @@ public class MainView extends Application implements Observador {
         scene.getStylesheets().add(getClass().getResource("css/Interfaz.css").toExternalForm());
         scene.getStylesheets().add(getClass().getResource("css/Texto.css").toExternalForm());
         scene.getStylesheets().add(getClass().getResource("css/Mejoras.css").toExternalForm());
+        primaryStage = new Stage();
         primaryStage.setResizable(false);
         primaryStage.setTitle("Le Pancherie");
         primaryStage.setScene(scene);
-        primaryStage.show();
-
-    }
-
-    @Override
-    public void stop() throws Exception {
-        super.stop();
+        Image icono = new Image("Res/Interfaz/appIcon.png");
+        primaryStage.getIcons().add(icono);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
     }
 
     @Override
@@ -152,14 +138,18 @@ public class MainView extends Application implements Observador {
             public void run() {
                 updateLabels();
                 updateMejoras();
+                updateFondo();
             }
         });
     }
+    public Stage getStage(){
+        return primaryStage;
+    }
     private void updateLabels(){
         //ACTUALIZO LABELS STOCKS, PANCHOS/S, MEJORAS
-        msjBanner.setText(src.Main.modelo.getMensaje());
-        stockLbl.setText(String.valueOf(src.Main.modelo.getPanchos()));
-        panchosLbl.setText(String.format("%.2f", src.Main.modelo.getPanchoIdle()) + " panchos/s");
+        msjBanner.setText(modelo.getMensaje());
+        stockLbl.setText(String.valueOf(modelo.getPanchos()));
+        panchosLbl.setText(String.format("%.1f", modelo.getPanchoIdle()) + " panchos/s");
         //Cantidades
         cursorLbl.setText(Integer.toString(Model.Mejoras.CURSORES.getCantidad()));
         condimentosLbl.setText(Integer.toString(Model.Mejoras.CONDIMENTOS.getCantidad()));
@@ -172,16 +162,16 @@ public class MainView extends Application implements Observador {
         empleadosLbl.setText(Integer.toString(Model.Mejoras.EMPLEADOS.getCantidad()));
         sucursalesLvl.setText(Integer.toString(Model.Mejoras.SUCURSALES.getCantidad()));
         //Costos
-        cursorCostLbl.setText(String.valueOf(Model.Mejoras.CURSORES.getCosto()));
-        condimenttosCostLbl.setText(String.valueOf(Model.Mejoras.CONDIMENTOS.getCosto()));
-        papasCostLbl.setText(String.valueOf(Model.Mejoras.PAPAS.getCosto()));
-        bebidasCostLbl.setText(String.valueOf(Model.Mejoras.BEBIDAS.getCosto()));
-        parrillasCostLbl.setText(String.valueOf(Model.Mejoras.PARRILLAS.getCosto()));
-        salchicherasCostLbl.setText(String.valueOf(Model.Mejoras.SALCHICHERA.getCosto()));
-        heladerasCostLbl.setText(String.valueOf(Model.Mejoras.HELADERA.getCosto()));
-        cajaCostLbl.setText(String.valueOf(Model.Mejoras.CAJA_REGISTRADORA.getCosto()));
-        empleadosCostLbl.setText(String.valueOf(Model.Mejoras.EMPLEADOS.getCosto()));
-        sucursalesCostLbl.setText(String.valueOf(Model.Mejoras.SUCURSALES.getCosto()));
+        cursorCostLbl.setText(Integer.toString(Model.Mejoras.CURSORES.getCosto()));
+        condimenttosCostLbl.setText(Integer.toString(Model.Mejoras.CONDIMENTOS.getCosto()));
+        papasCostLbl.setText(Integer.toString(Model.Mejoras.PAPAS.getCosto()));
+        bebidasCostLbl.setText(Integer.toString(Model.Mejoras.BEBIDAS.getCosto()));
+        parrillasCostLbl.setText(Integer.toString(Model.Mejoras.PARRILLAS.getCosto()));
+        salchicherasCostLbl.setText(Integer.toString(Model.Mejoras.SALCHICHERA.getCosto()));
+        heladerasCostLbl.setText(Integer.toString(Model.Mejoras.HELADERA.getCosto()));
+        cajaCostLbl.setText(Integer.toString(Model.Mejoras.CAJA_REGISTRADORA.getCosto()));
+        empleadosCostLbl.setText(Integer.toString(Model.Mejoras.EMPLEADOS.getCosto()));
+        sucursalesCostLbl.setText(Integer.toString(Model.Mejoras.SUCURSALES.getCosto()));
 
     }
     private void updateMejoras(){
@@ -195,6 +185,9 @@ public class MainView extends Application implements Observador {
         Caja.setStyle(String.format("-fx-background-image: url(%s);", Model.Mejoras.CAJA_REGISTRADORA.getMejoraUrl()));
         Empleados.setStyle(String.format("-fx-background-image: url(%s);", Model.Mejoras.EMPLEADOS.getMejoraUrl()));
         Sucursales.setStyle(String.format("-fx-background-image: url(%s);", Model.Mejoras.SUCURSALES.getMejoraUrl()));
+    }
+    private void updateFondo(){
+        System.out.println("estoy cambiando el fondo");
     }
 }
 

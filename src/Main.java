@@ -1,31 +1,58 @@
 package src;
 
 import javafx.application.Application;
-import src.Controller.Controlador;
+import javafx.concurrent.Task;
+import javafx.stage.Stage;
+import src.Controller.*;
 import src.Model.Model;
+import src.View.LoginView;
+import src.View.MainView;
+import src.View.StatsView;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.IOException;
 
-import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
-import java.util.Scanner; // Import the Scanner class to read text files
-
-public class Main {
-    public static Model modelo;
-    public static Controlador controlador;
+public class Main extends Application{
+    private static Model modelo;
+    private static Controlador mainController;
+    private static LoginController loginController;
+    private static StatsController statsController;
+    private static MainView mainView;
+    private static LoginView loginView;
+    private static StatsView statsView;
+    private Task PanchoIdleTask = new PanchoIdleTask(mainController);
+    private Task MessageRand = new RandomMsj(mainController);
 
     public static void main(String[] args) {
-
-
         modelo = new Model();
-        //modelo.inicializarMejoras();
-        controlador = new Controlador(modelo);
+        mainController = new Controlador(modelo);
+        loginController = new LoginController(modelo);
+        statsController = new StatsController(modelo);
+        launch(args);
 
-        Application.launch(src.View.MainView.class  , args);
-        //System.out.println("hola");
     }
 
+    @Override
+    public void init(){
+        Thread panchoIdle = new Thread(PanchoIdleTask);
+        panchoIdle.setDaemon(true);
+        panchoIdle.start();
+        Thread RandomMsj = new Thread(MessageRand);
+        RandomMsj.setDaemon(true);
+        RandomMsj.start();
+    }
+    @Override
+    public void start(Stage stage) throws Exception {
+        loginView = new LoginView(modelo, loginController);
+        statsView = new StatsView(modelo, statsController);
+        mainView = new MainView(modelo,mainController);
 
+        loginView.getStage().show();
+
+    }
+    public static MainView getMainView() {
+        return mainView;
+    }
+    public static StatsView getStatsView() {
+        return statsView;
+    }
 }
