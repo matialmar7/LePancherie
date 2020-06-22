@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import src.main.java.Controller.Controlador;
@@ -59,6 +60,8 @@ public class MainView implements Observador {
     private Button Caja;
     private Button Empleados;
     private Button Sucursales;
+    //Fondos
+    private AnchorPane fondo;
 
 
 
@@ -114,10 +117,12 @@ public class MainView implements Observador {
         Caja = (Button) scene.lookup("#Caja");
         Empleados = (Button) scene.lookup("#Empleados");
         Sucursales = (Button) scene.lookup("#Sucursales");
-
+        //Fondo
+        fondo = (AnchorPane) scene.lookup("#Nivel_Pane");
         //Inicializo los valores en las labels
         updateLabels();
         updateMejoras();
+        updateFondo();
 
         scene.getStylesheets().add(getClass().getResource("css/Interfaz.css").toExternalForm());
         scene.getStylesheets().add(getClass().getResource("css/Texto.css").toExternalForm());
@@ -187,7 +192,7 @@ public class MainView implements Observador {
         Sucursales.setStyle(String.format("-fx-background-image: url(%s);", Model.Mejoras.SUCURSALES.getMejoraUrl()));
     }
     private void updateFondo(){
-
+        fondo.setStyle(String.format("-fx-background-image: url(%s);", modelo.getLvl().getUrl()));
     }
 }
 

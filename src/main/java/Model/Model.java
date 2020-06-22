@@ -16,7 +16,8 @@ public class Model implements Observado{
 
     private static double StockPanchos = 0;
     private static double PanchoIdle = 0;
-    private String Alias = "";
+    private static String Alias = "";
+    private static Fondos fondo = Fondos.CALLE;
     private static String mensaje = "LOS PANCHOS SON BUENOS PARA LA SALUD";
     private static String[] Mensajes = {
             "LOS PANCHOS SON BUENOS PARA LA SALUD",
@@ -142,7 +143,7 @@ public class Model implements Observado{
             this.prodBase=prod;
         }
     }
-    private enum Fondos{
+    public enum Fondos{
         CALLE(new Image("src/main/resources/Interfaz/Fondos/Fondo_Calle.png"),0),
         CASA(new Image("src/main/resources/Interfaz/Fondos/Fondo_Casa.png"),1000),
         PLAZA(new Image("src/main/resources/Interfaz/Fondos/Fondo_Plaza.png"),10000),
@@ -156,6 +157,12 @@ public class Model implements Observado{
         Fondos(Image fondo, int CantPanchos){
             this.fondo = fondo;
             CostoPanchos = CantPanchos;
+        }
+        public int getCosto(){
+            return CostoPanchos;
+        }
+        public String getUrl(){
+            return fondo.getUrl();
         }
     }
 
@@ -199,12 +206,22 @@ public class Model implements Observado{
             StockPanchos -= i;
             notificar(observadores.get(0));
     }
-
+    private void updateLvl(){
+        for(Fondos f : Fondos.values()){
+            if(getPanchos() >= f.getCosto()){
+                fondo = f;
+            }
+        }
+    }
+    public Fondos getLvl(){
+        return fondo;
+    }
     /*ACA LE SUMO i AL STOCK DE PANCHOS*/
     public void addPancho(double i){
         if(i>0)
         {
             StockPanchos += i;
+            updateLvl();
             notificar(observadores.get(0));
         }
     }
@@ -241,6 +258,7 @@ public class Model implements Observado{
         }
     }
 
+
     public int getPanchos(){
         return (int)StockPanchos;
     }
@@ -251,7 +269,6 @@ public class Model implements Observado{
     public void setAlias(String a){
         this.Alias = a;
     }
-
     public void loadPlayerData(){
         this.checkFile();   //VEO SI EL ARCHIVO EXISTE Y SINO CREO
         //System.out.println("Estoy Cargando la partida de: " + this.Alias);
@@ -282,7 +299,6 @@ public class Model implements Observado{
         lector.close();
         notificarTodos();
     }
-
     public void savePlayerData(){
         try {
             FileWriter writer = new FileWriter(file);
@@ -295,7 +311,6 @@ public class Model implements Observado{
             e.printStackTrace();
         }
     }
-
     public void checkFile(){
         String pato = this.Alias + ".txt";
         file = new File(pato);  //file ES EL ARCHIVO SOBRE EL CUAL VOY A TRABAJAR
