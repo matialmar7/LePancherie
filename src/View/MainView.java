@@ -138,6 +138,7 @@ public class MainView implements Observador {
             public void run() {
                 updateLabels();
                 updateMejoras();
+                updateFondo();
             }
         });
     }
@@ -148,7 +149,7 @@ public class MainView implements Observador {
         //ACTUALIZO LABELS STOCKS, PANCHOS/S, MEJORAS
         msjBanner.setText(modelo.getMensaje());
         stockLbl.setText(String.valueOf(modelo.getPanchos()));
-        panchosLbl.setText(String.format("%.0f", modelo.getPanchoIdle()*10) + " panchos/s");
+        panchosLbl.setText(String.format("%.1f", modelo.getPanchoIdle()) + " panchos/s");
         //Cantidades
         cursorLbl.setText(Integer.toString(Model.Mejoras.CURSORES.getCantidad()));
         condimentosLbl.setText(Integer.toString(Model.Mejoras.CONDIMENTOS.getCantidad()));
@@ -185,7 +186,8 @@ public class MainView implements Observador {
         Empleados.setStyle(String.format("-fx-background-image: url(%s);", Model.Mejoras.EMPLEADOS.getMejoraUrl()));
         Sucursales.setStyle(String.format("-fx-background-image: url(%s);", Model.Mejoras.SUCURSALES.getMejoraUrl()));
     }
-
-
+    private void updateFondo(){
+        System.out.println("estoy cambiando el fondo");
+    }
 }
 

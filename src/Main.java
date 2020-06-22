@@ -22,7 +22,6 @@ public class Main extends Application{
     private Task PanchoIdleTask = new PanchoIdleTask(mainController);
     private Task MessageRand = new RandomMsj(mainController);
 
-
     public static void main(String[] args) {
         modelo = new Model();
         mainController = new Controlador(modelo);
@@ -37,7 +36,6 @@ public class Main extends Application{
         Thread panchoIdle = new Thread(PanchoIdleTask);
         panchoIdle.setDaemon(true);
         panchoIdle.start();
-
         Thread RandomMsj = new Thread(MessageRand);
         RandomMsj.setDaemon(true);
         RandomMsj.start();
@@ -51,7 +49,6 @@ public class Main extends Application{
         loginView.getStage().show();
 
     }
-
     public static MainView getMainView() {
         return mainView;
     }

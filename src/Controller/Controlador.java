@@ -43,6 +43,7 @@ public class Controlador {
     private Button statsBtn;
 
     //METODOS CURSORES
+
     public void Cursor_onClick(ActionEvent event){
         modelo.comprarMejora(Model.Mejoras.CURSORES);
     }
@@ -79,7 +80,7 @@ public class Controlador {
         modelo.addPanchoClick(1);
     }
     public void addPanchoIdle(){
-        modelo.addPancho(modelo.getPanchoIdle());
+        modelo.addPancho(modelo.getPanchoIdle()/10);
     }
     //METODOS VARIOS
     public void printRandomMensaje(){
@@ -87,6 +88,7 @@ public class Controlador {
     }
     //METODOS MENU
     public void Close_onClick(ActionEvent e){
+        modelo.savePlayerData();
         Stage stage = (Stage)closeBtn.getScene().getWindow();
         stage.close();
     }

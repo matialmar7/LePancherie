@@ -31,7 +31,9 @@ public class LoginController {
             alerta.show();
         }
         else{
+            modelo.inicializarMejoras();
             modelo.setAlias(AliasTxt.getText());
+            modelo.loadPlayerData();
             Main.getMainView().getStage().show();
             Stage stage = (Stage)AliasTxt.getScene().getWindow();
             stage.close();
