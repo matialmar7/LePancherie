@@ -144,18 +144,20 @@ public class Model implements Observado{
         }
     }
     public enum Fondos{
-        CALLE(new Image("src/main/resources/Interfaz/Fondos/Fondo_Calle.png"),0),
-        CASA(new Image("src/main/resources/Interfaz/Fondos/Fondo_Casa.png"),1000),
-        PLAZA(new Image("src/main/resources/Interfaz/Fondos/Fondo_Plaza.png"),10000),
-        FERIA(new Image("src/main/resources/Interfaz/Fondos/Fondo_Feria.png"),100000),
-        RESTAURANTE(new Image("src/main/resources/Interfaz/Fondos/Fondo_Restaurante.png"),1000000),
-        ORBITA(new Image("src/main/resources/Interfaz/Fondos/Fondo_Orbita.png"),10000000),
-        MARTE(new Image("src/main/resources/Interfaz/Fondos/Fondo_Marte.png"),100000000);
+        CALLE(0,new Image("src/main/resources/Interfaz/Fondos/Fondo_Calle.png"),0),
+        CASA(1,new Image("src/main/resources/Interfaz/Fondos/Fondo_Casa.png"),1000),
+        PLAZA(2,new Image("src/main/resources/Interfaz/Fondos/Fondo_Plaza.png"),10000),
+        FERIA(3,new Image("src/main/resources/Interfaz/Fondos/Fondo_Feria.png"),100000),
+        RESTAURANTE(4,new Image("src/main/resources/Interfaz/Fondos/Fondo_Restaurante.png"),1000000),
+        ORBITA(5,new Image("src/main/resources/Interfaz/Fondos/Fondo_Orbita.png"),10000000),
+        MARTE(6,new Image("src/main/resources/Interfaz/Fondos/Fondo_Marte.png"),100000000);
 
         Image fondo;
         int CostoPanchos;
-        Fondos(Image fondo, int CantPanchos){
+        int nivel;
+        Fondos(int nivel,Image fondo, int CantPanchos){
             this.fondo = fondo;
+            this.nivel = nivel;
             CostoPanchos = CantPanchos;
         }
         public int getCosto(){
@@ -163,6 +165,9 @@ public class Model implements Observado{
         }
         public String getUrl(){
             return fondo.getUrl();
+        }
+        public int getNivel(){
+            return nivel;
         }
     }
 
@@ -208,7 +213,7 @@ public class Model implements Observado{
     }
     private void updateLvl(){
         for(Fondos f : Fondos.values()){
-            if(getPanchos() >= f.getCosto()){
+            if(getPanchos() >= f.getCosto() && f.getNivel()>fondo.getNivel()){
                 fondo = f;
             }
         }
