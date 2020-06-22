@@ -22,6 +22,7 @@ public class Main extends Application{
     private Task PanchoIdleTask = new PanchoIdleTask(mainController);
     private Task MessageRand = new RandomMsj(mainController);
 
+
     public static void main(String[] args) {
         modelo = new Model();
         mainController = new Controlador(modelo);
