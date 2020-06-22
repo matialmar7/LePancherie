@@ -8,7 +8,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="AnchorPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField id="AliasTxt" fx:id="AliasTxt" layoutX="50.0" layoutY="86.0" prefHeight="25.0" prefWidth="150.0" promptText="Alias">
+      <TextField id="AliasTxt" fx:id="AliasTxt" layoutX="50.0" layoutY="86.0" onAction="#Login_onClick" prefHeight="25.0" prefWidth="150.0" promptText="Alias">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
