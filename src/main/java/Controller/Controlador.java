@@ -1,11 +1,11 @@
-package src.Controller;
+package src.main.java.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import src.Main;
-import src.Model.Model;
+import src.main.java.Main;
+import src.main.java.Model.Model;
 
 public class Controlador {
     Model modelo;

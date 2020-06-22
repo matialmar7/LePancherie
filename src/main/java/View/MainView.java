@@ -1,4 +1,4 @@
-package src.View;
+package src.main.java.View;
 
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -9,9 +9,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import src.Controller.Controlador;
-import src.Model.Model;
-import src.Model.Observador;
+import src.main.java.Controller.Controlador;
+import src.main.java.Model.Model;
+import src.main.java.Model.Observador;
 
 import java.io.IOException;
 
@@ -126,7 +126,7 @@ public class MainView implements Observador {
         primaryStage.setResizable(false);
         primaryStage.setTitle("Le Pancherie");
         primaryStage.setScene(scene);
-        Image icono = new Image("Res/Interfaz/appIcon.png");
+        Image icono = new Image("src/main/resources/Interfaz/windowsIcon.png");
         primaryStage.getIcons().add(icono);
         primaryStage.initStyle(StageStyle.UNDECORATED);
     }

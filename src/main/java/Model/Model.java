@@ -1,4 +1,4 @@
-package src.Model;
+package src.main.java.Model;
 
 import javafx.scene.image.Image;
 
@@ -36,25 +36,25 @@ public class Model implements Observado{
     private File file = null;
 
     //WEAS PARA CARGAR LAS MEJROAS
-    private int costos_base [] = new int[10];
-    private double prod_base [] = new double[10];
-    private double taz_crec [] = new double[10];
+    private int[] costos_base  = new int[10];
+    private double[] prod_base = new double[10];
+    private double[] taz_crec  = new double[10];
     private double[] multiplier = new double[10];
 
 
     //Valores de configuracion mejoras
 
     public enum Mejoras{
-        CURSORES(1,3,0.075,new Image("Res/Mejoras/Cursores/Cursores_lvl_1.png"),new Image("Res/Mejoras/Cursores/Cursores_lvl_2.png"),new Image("Res/Mejoras/Cursores/Cursores_lvl_3.png")),
-        CONDIMENTOS(2,1,1, new Image("Res/Mejoras/Condimentos/Condimentos_lvl_1.png"),new Image("Res/Mejoras/Condimentos/Condimentos_lvl_2.png"),new Image("Res/Mejoras/Condimentos/Condimentos_lvl_3.png")),
-        PAPAS(3,1,1,new Image("Res/Mejoras/Papas/Papas_lvl_1.png"),new Image("Res/Mejoras/Papas/Papas_lvl_2.png"),new Image("Res/Mejoras/Papas/Papas_lvl_3.png")),
-        BEBIDAS(4,1,1,new Image("Res/Mejoras/Bebidas/Bebidas_lvl_1.png"),new Image("Res/Mejoras/Bebidas/Bebidas_lvl_2.png"),new Image("Res/Mejoras/Bebidas/Bebidas_lvl_3.png")),
-        PARRILLAS(5,1,1,new Image("Res/Mejoras/Parrillas/Parilla_lvl_1.png"),new Image("Res/Mejoras/Parrillas/Parilla_lvl_2.png"),new Image("Res/Mejoras/Parrillas/Parilla_lvl_3.png")),
-        SALCHICHERA(6,1,1,new Image("Res/Mejoras/Salchichera/Salchichera_lvl_1.png"),new Image("Res/Mejoras/Salchichera/Salchichera_lvl_2.png"),new Image("Res/Mejoras/Salchichera/Salchichera_lvl_3.png")),
-        HELADERA(7,1,1,new Image("Res/Mejoras/Heladeras/Heladeras_lvl_1.png"),new Image("Res/Mejoras/Heladeras/Heladeras_lvl_2.png"),new Image("Res/Mejoras/Heladeras/Heladeras_lvl_3.png")),
-        CAJA_REGISTRADORA(8,1,1,new Image("Res/Mejoras/Caja_Registradora/Caja_Registradora_lvl_1.png"),new Image("Res/Mejoras/Caja_Registradora/Cajas_Registradora_lvl_2.png"),new Image("Res/Mejoras/Caja_Registradora/Cajas_Registradora_lvl_3.png")),
-        EMPLEADOS(9,1,1,new Image("Res/Mejoras/Empleados/Empleados_lvl_1.png"),new Image("Res/Mejoras/Empleados/Empleados_lvl_2.png"),new Image("Res/Mejoras/Empleados/Empleados_lvl_3.png")),
-        SUCURSALES(10,1,1,new Image("Res/Mejoras/Sucursales/Sucursales_lvl_1.png"),new Image("Res/Mejoras/Sucursales/Sucursales_lvl_2.png"),new Image("Res/Mejoras/Sucursales/Sucursales_lvl_3.png"));
+        CURSORES(1,3,0.075,new Image("src/main/resources/Mejoras/Cursores/Cursores_lvl_1.png"),new Image("src/main/resources/Mejoras/Cursores/Cursores_lvl_2.png"),new Image("src/main/resources/Mejoras/Cursores/Cursores_lvl_3.png")),
+        CONDIMENTOS(2,1,1, new Image("src/main/resources/Mejoras/Condimentos/Condimentos_lvl_1.png"),new Image("src/main/resources/Mejoras/Condimentos/Condimentos_lvl_2.png"),new Image("src/main/resources/Mejoras/Condimentos/Condimentos_lvl_3.png")),
+        PAPAS(3,1,1,new Image("src/main/resources/Mejoras/Papas/Papas_lvl_1.png"),new Image("src/main/resources/Mejoras/Papas/Papas_lvl_2.png"),new Image("src/main/resources/Mejoras/Papas/Papas_lvl_3.png")),
+        BEBIDAS(4,1,1,new Image("src/main/resources/Mejoras/Bebidas/Bebidas_lvl_1.png"),new Image("src/main/resources/Mejoras/Bebidas/Bebidas_lvl_2.png"),new Image("src/main/resources/Mejoras/Bebidas/Bebidas_lvl_3.png")),
+        PARRILLAS(5,1,1,new Image("src/main/resources/Mejoras/Parrillas/Parilla_lvl_1.png"),new Image("src/main/resources/Mejoras/Parrillas/Parilla_lvl_2.png"),new Image("src/main/resources/Mejoras/Parrillas/Parilla_lvl_3.png")),
+        SALCHICHERA(6,1,1,new Image("src/main/resources/Mejoras/Salchichera/Salchichera_lvl_1.png"),new Image("src/main/resources/Mejoras/Salchichera/Salchichera_lvl_2.png"),new Image("src/main/resources/Mejoras/Salchichera/Salchichera_lvl_3.png")),
+        HELADERA(7,1,1,new Image("src/main/resources/Mejoras/Heladeras/Heladeras_lvl_1.png"),new Image("src/main/resources/Mejoras/Heladeras/Heladeras_lvl_2.png"),new Image("src/main/resources/Mejoras/Heladeras/Heladeras_lvl_3.png")),
+        CAJA_REGISTRADORA(8,1,1,new Image("src/main/resources/Mejoras/Caja_Registradora/Caja_Registradora_lvl_1.png"),new Image("src/main/resources/Mejoras/Caja_Registradora/Cajas_Registradora_lvl_2.png"),new Image("src/main/resources/Mejoras/Caja_Registradora/Cajas_Registradora_lvl_3.png")),
+        EMPLEADOS(9,1,1,new Image("src/main/resources/Mejoras/Empleados/Empleados_lvl_1.png"),new Image("src/main/resources/Mejoras/Empleados/Empleados_lvl_2.png"),new Image("src/main/resources/Mejoras/Empleados/Empleados_lvl_3.png")),
+        SUCURSALES(10,1,1,new Image("src/main/resources/Mejoras/Sucursales/Sucursales_lvl_1.png"),new Image("src/main/resources/Mejoras/Sucursales/Sucursales_lvl_2.png"),new Image("src/main/resources/Mejoras/Sucursales/Sucursales_lvl_3.png"));
         public enum Nivel{
             INICIAL,MEDIO,AVANZADO
         }
@@ -143,13 +143,13 @@ public class Model implements Observado{
         }
     }
     private enum Fondos{
-        CALLE(new Image("Res/Interfaz/Fondos/Fondo_Calle.png"),0),
-        CASA(new Image("Res/Interfaz/Fondos/Fondo_Casa.png"),1000),
-        PLAZA(new Image("Res/Interfaz/Fondos/Fondo_Plaza.png"),10000),
-        FERIA(new Image("Res/Interfaz/Fondos/Fondo_Feria.png"),100000),
-        RESTAURANTE(new Image("Res/Interfaz/Fondos/Fondo_Restaurante.png"),1000000),
-        ORBITA(new Image("Res/Interfaz/Fondos/Fondo_Orbita.png"),10000000),
-        MARTE(new Image("Res/Interfaz/Fondos/Fondo_Marte.png"),100000000);
+        CALLE(new Image("src/main/resources/Interfaz/Fondos/Fondo_Calle.png"),0),
+        CASA(new Image("src/main/resources/Interfaz/Fondos/Fondo_Casa.png"),1000),
+        PLAZA(new Image("src/main/resources/Interfaz/Fondos/Fondo_Plaza.png"),10000),
+        FERIA(new Image("src/main/resources/Interfaz/Fondos/Fondo_Feria.png"),100000),
+        RESTAURANTE(new Image("src/main/resources/Interfaz/Fondos/Fondo_Restaurante.png"),1000000),
+        ORBITA(new Image("src/main/resources/Interfaz/Fondos/Fondo_Orbita.png"),10000000),
+        MARTE(new Image("src/main/resources/Interfaz/Fondos/Fondo_Marte.png"),100000000);
 
         Image fondo;
         int CostoPanchos;

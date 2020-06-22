@@ -1,5 +1,5 @@
 #CloseBtn{
-    -fx-background-image: url("../../Res/Interfaz/Botones/botonNoPresionado.png");
+    -fx-background-image: url("../../../resources/Interfaz/Botones/botonNoPresionado.png");
     -fx-background-color: transparent;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 98%;
@@ -8,7 +8,7 @@
     -fx-background-size: 100%;
 }
 #CloseBtn:pressed{
-    -fx-background-image: url("../../Res/Interfaz/Botones/botonPresionado.png");
+    -fx-background-image: url("../../../resources/Interfaz/Botones/botonPresionado.png");
 }
 #MenuPane{
     -fx-background-color: black;

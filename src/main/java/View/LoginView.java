@@ -1,14 +1,14 @@
-package src.View;
+package src.main.java.View;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import src.Controller.Controlador;
-import src.Controller.LoginController;
-import src.Model.Model;
+import src.main.java.Controller.LoginController;
+import src.main.java.Model.Model;
 
 import java.io.IOException;
 
@@ -32,7 +32,8 @@ public class LoginView {
         loginScene.getStylesheets().add(getClass().getResource("css/Login.css").toExternalForm());
         loginStage = new Stage();
         loginStage.setResizable(false);
-        //loginStage.setTitle("LePancherie - Login");
+        Image icono = new Image("src/main/resources/Interfaz/windowsIcon.png");
+        loginStage.getIcons().add(icono);
         loginStage.setScene(loginScene);
         loginStage.initStyle(StageStyle.UNDECORATED);
         loginStage.initModality(Modality.APPLICATION_MODAL);

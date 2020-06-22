@@ -1,11 +1,11 @@
 #Nivel_Pane{
-    -fx-background-image: url("../../Res/Interfaz/Fondos/Fondo_Calle.png");
+    -fx-background-image: url("../../../resources/Interfaz/Fondos/Fondo_Calle.png");
     -fx-background-color: transparent;
     -fx-background-size: contain;
     -fx-background-repeat: no-repeat;
 }
 #Pancho_Pane{
-    -fx-background-image: url("../../Res/Interfaz/Fondo_ClickObj.png");
+    -fx-background-image: url("../../../resources/Interfaz/Fondo_ClickObj.png");
     -fx-background-color: transparent;
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
@@ -16,12 +16,12 @@
     -fx-opacity: 25%;
 }
 #Mejoras_Grid{
-    -fx-background-image: url("../../Res/Interfaz/Botonera.png");
+    -fx-background-image: url("../../../resources/Interfaz/Botonera.png");
     -fx-background-color: #FFFFBA;
 }
 #PanchoBtn{
     -fx-background-color: transparent;
-    -fx-background-image: url("../../Res/Interfaz/ImgPancho.png");
+    -fx-background-image: url("../../../resources/Interfaz/ImgPancho.png");
     -fx-background-position: center;
     -fx-background-size: 90%;
     -fx-background-repeat: no-repeat;
@@ -34,7 +34,7 @@
     -fx-background-size: 100%;
 }
 #CloseBtn{
-    -fx-background-image: url("../../Res/Interfaz/Botones/botonNoPresionado.png");
+    -fx-background-image: url("../../../resources/Interfaz/Botones/botonNoPresionado.png");
     -fx-background-color: transparent;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 98%;
@@ -43,10 +43,10 @@
     -fx-background-size: 100%;
 }
 #CloseBtn:pressed{
-    -fx-background-image: url("../../Res/Interfaz/Botones/botonPresionado.png");
+    -fx-background-image: url("../../../resources/Interfaz/Botones/botonPresionado.png");
 }
 #StatsBtn{
-    -fx-background-image: url("../../Res/Interfaz/Botones/botonStats.png");
+    -fx-background-image: url("../../../resources/Interfaz/Botones/botonStats.png");
     -fx-background-color: transparent;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 98%;
@@ -55,5 +55,5 @@
     -fx-background-size: 100%;
 }
 #StatsBtn:pressed{
-    -fx-background-image: url("../../Res/Interfaz/Botones/botonStats.png");
+    -fx-background-image: url("../../../resources/Interfaz/Botones/botonStats.png");
 }

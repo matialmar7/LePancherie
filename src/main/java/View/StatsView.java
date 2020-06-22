@@ -1,13 +1,14 @@
-package src.View;
+package src.main.java.View;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import src.Controller.StatsController;
-import src.Model.Model;
+import src.main.java.Controller.StatsController;
+import src.main.java.Model.Model;
 
 import java.io.IOException;
 
@@ -31,7 +32,8 @@ public class StatsView {
             statsScene.getStylesheets().add(getClass().getResource("css/Stats.css").toExternalForm());
             statsStage = new Stage();
             statsStage.setResizable(false);
-            //loginStage.setTitle("LePancherie - Login");
+            Image icono = new Image("src/main/resources/Interfaz/windowsIcon.png");
+            statsStage.getIcons().add(icono);
             statsStage.setScene(statsScene);
             statsStage.initStyle(StageStyle.UNDECORATED);
             statsStage.initModality(Modality.APPLICATION_MODAL);

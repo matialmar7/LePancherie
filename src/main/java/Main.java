@@ -1,15 +1,13 @@
-package src;
+package src.main.java;
 
 import javafx.application.Application;
 import javafx.concurrent.Task;
 import javafx.stage.Stage;
-import src.Controller.*;
-import src.Model.Model;
-import src.View.LoginView;
-import src.View.MainView;
-import src.View.StatsView;
-
-import java.io.IOException;
+import src.main.java.Controller.*;
+import src.main.java.Model.Model;
+import src.main.java.View.LoginView;
+import src.main.java.View.MainView;
+import src.main.java.View.StatsView;
 
 public class Main extends Application{
     private static Model modelo;
@@ -45,7 +43,6 @@ public class Main extends Application{
         loginView = new LoginView(modelo, loginController);
         statsView = new StatsView(modelo, statsController);
         mainView = new MainView(modelo,mainController);
-
         loginView.getStage().show();
 
     }

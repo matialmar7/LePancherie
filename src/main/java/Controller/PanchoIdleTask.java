@@ -1,4 +1,4 @@
-package src.Controller;
+package src.main.java.Controller;
 
 import javafx.concurrent.Task;
 
@@ -9,7 +9,7 @@ public class PanchoIdleTask extends Task {
         controlador = controller;
     }
     @Override
-    protected Void call() throws Exception {
+    protected Void call(){
         for(;;){
             try{
                 Thread.sleep(100);

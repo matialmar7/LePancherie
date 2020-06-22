@@ -1,5 +1,4 @@
-package src.Controller;
-
+package src.main.java.Controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.control.Alert;
@@ -7,8 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import src.Main;
-import src.Model.Model;
+import src.main.java.Main;
+import src.main.java.Model.Model;
 
 
 public class LoginController {
