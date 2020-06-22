@@ -187,7 +187,7 @@ public class MainView implements Observador {
         Sucursales.setStyle(String.format("-fx-background-image: url(%s);", Model.Mejoras.SUCURSALES.getMejoraUrl()));
     }
     private void updateFondo(){
-        System.out.println("estoy cambiando el fondo");
+
     }
 }
 

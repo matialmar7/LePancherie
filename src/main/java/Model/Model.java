@@ -254,7 +254,7 @@ public class Model implements Observado{
 
     public void loadPlayerData(){
         this.checkFile();   //VEO SI EL ARCHIVO EXISTE Y SINO CREO
-        System.out.println("Estoy Cargando la partida de: " + this.Alias);
+        //System.out.println("Estoy Cargando la partida de: " + this.Alias);
         Scanner lector = null;
         String line;
         int i = 0;
