@@ -23,7 +23,6 @@ public class Model implements Observado{
             };
     private static long PanchoClickTimestamp = System.currentTimeMillis();
 
-
     //Valores de configuracion mejoras
 
     public enum Mejoras{
