@@ -8,7 +8,7 @@ import java.util.Random;
 import java.lang.System;
 
 public class Model implements Observado{
-
+    private static String alias;
     private static double StockPanchos = 0;
     private static double PanchoIdle = 0;
     private static String mensaje = "LOS PANCHOS SON BUENOS PARA LA SALUD";
@@ -19,9 +19,11 @@ public class Model implements Observado{
             "F",
             "A LOS PANCHOS SE LES DICE FRANCISCO",
             "EN UN KG ENTRAN 12 SALCHICAS",
-            "EL PANCHO MAS LARGO DEL MUNDO TIENE 203 METROS Y PESA 120KGs",
+            "EL PANCHO MAS LARGO DEL MUNDO TIENE 203 METROS Y PESA 120KGs"
             };
     private static long PanchoClickTimestamp = System.currentTimeMillis();
+
+
     //Valores de configuracion mejoras
 
     public enum Mejoras{
@@ -219,5 +221,11 @@ public class Model implements Observado{
     public void setMensaje(String msj){
         mensaje = msj;
         //notificar(observadores.get(0));
+    }
+    public static String getAlias() {
+        return alias;
+    }
+    public static void setAlias(String alias) {
+        Model.alias = alias;
     }
 }

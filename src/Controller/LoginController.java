@@ -31,6 +31,7 @@ public class LoginController {
             alerta.show();
         }
         else{
+            modelo.setAlias(AliasTxt.getText());
             Main.getMainView().getStage().show();
             Stage stage = (Stage)AliasTxt.getScene().getWindow();
             stage.close();
