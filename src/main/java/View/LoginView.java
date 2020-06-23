@@ -32,6 +32,7 @@ public class LoginView {
         loginScene.getStylesheets().add(getClass().getResource("css/Login.css").toExternalForm());
         loginStage = new Stage();
         loginStage.setResizable(false);
+        loginStage.setTitle("Le Pancherie - Login");
         Image icono = new Image("src/main/resources/Interfaz/windowsIcon.png");
         loginStage.getIcons().add(icono);
         loginStage.setScene(loginScene);

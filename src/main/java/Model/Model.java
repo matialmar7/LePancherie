@@ -228,6 +228,7 @@ public class Model implements Observado{
             StockPanchos += i;
             updateLvl();
             notificar(observadores.get(0));
+            notificar(observadores.get(1));
         }
     }
 
@@ -249,20 +250,26 @@ public class Model implements Observado{
         }
     }
 
+
     public void comprarMejora(Mejoras mejora){
-        int costoMejora = mejora.getCosto();
-        if(StockPanchos >= costoMejora){
-            mejora.addCantidad(1);
-            mejora.updateLevel();
-            takePanchos(costoMejora);
-            this.setPanchoIdle();
+        if(mejora.cantidad == 200){
+            setMensaje("HAS LLEGADO AL LIMITE PARA ESTA CANTIDAD DE MEJORAS");
         }
         else{
-            String msj = "Necesitas tener: " + costoMejora + " panchos para comprar " + mejora + " nivel " + (mejora.getCantidad()+1);
-            setMensaje(msj);
+            int costoMejora = mejora.getCosto();
+            if(StockPanchos >= costoMejora){
+                mejora.addCantidad(1);
+                mejora.updateLevel();
+                takePanchos(costoMejora);
+                this.setPanchoIdle();
+            }
+            else{
+                String msj = "Necesitas tener: " + costoMejora + " panchos para comprar " + mejora + " nivel " + (mejora.getCantidad()+1);
+                setMensaje(msj);
+            }
         }
-    }
 
+    }
 
     public int getPanchos(){
         return (int)StockPanchos;
