@@ -20,7 +20,7 @@ class ModelTest {
         stage.show();
     }
     @Test
-    void addPancho() {
+    void addPanchoTest() {
         modelo.addPancho(1);
         Assertions.assertEquals(1,modelo.getPanchos());
     }
