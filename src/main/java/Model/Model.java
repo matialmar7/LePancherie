@@ -187,18 +187,16 @@ public class Model implements Observado{
 
     }
     @Override
-    public void notificar(Observador o) throws IllegalArgumentException{
-        if(observadores.contains(o)){
-            o.update();
-        }
-        else{
-            throw new IllegalArgumentException("El observador no se encuentra en la lista de observadores");
+    public void notificar(int o) {
+        if(!observadores.isEmpty()) {
+            observadores.get(o).update();
         }
     }
     @Override
     public void notificarTodos(){
         for (Observador o: observadores) {
-            notificar(o);}
+            notificar(observadores.indexOf(o));
+        }
     }
     //****************************************************************************
 
@@ -209,7 +207,7 @@ public class Model implements Observado{
 
     private void takePanchos(int i){
             StockPanchos -= i;
-            notificar(observadores.get(0));
+            notificar(0);
     }
     private void updateLvl(){
         for(Fondos f : Fondos.values()){
@@ -227,8 +225,8 @@ public class Model implements Observado{
         {
             StockPanchos += i;
             updateLvl();
-            notificar(observadores.get(0));
-            notificar(observadores.get(1));
+            notificar(0);
+            notificar(1);
         }
     }
 
@@ -398,6 +396,6 @@ public class Model implements Observado{
 
     public void setMensaje(String msj){
         mensaje = msj;
-        //notificar(observadores.get(0));
+        //notificar(0);
     }
 }
