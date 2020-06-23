@@ -2,10 +2,7 @@ package src.main.java.Model;
 
 import javafx.scene.image.Image;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -17,7 +14,7 @@ public class Model implements Observado{
     private static double StockPanchos = 0;
     private static double PanchoIdle = 0;
     private static String Alias = "";
-    private static Fondos fondo = Fondos.CALLE;
+    private static Fondos fondo = Fondos.CASA;
     private static String mensaje = "LOS PANCHOS SON BUENOS PARA LA SALUD";
     private static String[] Mensajes = {
             "LOS PANCHOS SON BUENOS PARA LA SALUD",
@@ -130,6 +127,22 @@ public class Model implements Observado{
                 currentLvl =  Nivel.MEDIO;
             }
         }
+        public int getNivel(){
+            int cantidadLvl2 = 75;
+            int cantidadLvl3 = 150;
+
+            if(0<cantidad && cantidad < cantidadLvl2){
+                return 1;
+            }
+            if(cantidad >= cantidadLvl2){
+                return 2;
+            }
+            if(cantidad >= cantidadLvl3){
+                currentLvl =  Nivel.MEDIO;
+                return 3;
+            }
+            return 1;
+        }
         public Nivel getCurrentLevel(){
             return currentLvl;
         }
@@ -144,14 +157,17 @@ public class Model implements Observado{
             this.prodBase=prod;
         }
     }
+
+
+
     public enum Fondos{
-        CALLE(0,new Image("src/main/resources/Interfaz/Fondos/Fondo_Calle.png"),0),
-        CASA(1,new Image("src/main/resources/Interfaz/Fondos/Fondo_Casa.png"),1000),
-        PLAZA(2,new Image("src/main/resources/Interfaz/Fondos/Fondo_Plaza.png"),10000),
-        FERIA(3,new Image("src/main/resources/Interfaz/Fondos/Fondo_Feria.png"),100000),
-        RESTAURANTE(4,new Image("src/main/resources/Interfaz/Fondos/Fondo_Restaurante.png"),1000000),
-        ORBITA(5,new Image("src/main/resources/Interfaz/Fondos/Fondo_Orbita.png"),10000000),
-        MARTE(6,new Image("src/main/resources/Interfaz/Fondos/Fondo_Marte.png"),100000000);
+        CASA(0,new Image("src/main/resources/Interfaz/Fondos/Fondo_Casa.png"),0),
+        PLAZA(1,new Image("src/main/resources/Interfaz/Fondos/Fondo_Plaza.png"),10000),
+        RESTAURANTE(2,new Image("src/main/resources/Interfaz/Fondos/Fondo_Restaurante.png"),400000),
+        CASINO(3,new Image("src/main/resources/Interfaz/Fondos/Fondo_Casino.png"),2400000),
+        ATLANTIS(4,new Image("src/main/resources/Interfaz/Fondos/Fondo_Atlantis.png"),50000000),
+        ORBITA(5,new Image("src/main/resources/Interfaz/Fondos/Fondo_Orbita.png"),100000000),
+        MARTE(6,new Image("src/main/resources/Interfaz/Fondos/Fondo_Marte.png"),1000000000);
 
         Image fondo;
         int CostoPanchos;
@@ -210,7 +226,7 @@ public class Model implements Observado{
             StockPanchos -= i;
             notificar(0);
     }
-    private void updateLvl(){
+    public void updateLvl(){
         for(Fondos f : Fondos.values()){
             if(getPanchos() >= f.getCosto() && f.getNivel()>fondo.getNivel()){
                 fondo = f;
@@ -229,6 +245,9 @@ public class Model implements Observado{
             notificar(0);
             notificar(1);
         }
+    }
+    public void cleanPanchos(){
+        StockPanchos = 0;
     }
 
     /*ENTRO CON UN VALOR i Y LE ADDPANCHO(i)*/
@@ -337,43 +356,38 @@ public class Model implements Observado{
         }
     }
     public void inicializarMejoras(){
-        try {
-            int counter = 0;
-            int counter2 = 0;
-            File myObj = new File("Tazas_de_creci.txt");
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
+        int counter = 0;
+        int counter2 = 0;
+        BufferedReader myObj = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("Tazas_de_creci.txt")));
+        Scanner myReader = new Scanner(myObj);
+        while (myReader.hasNextLine()) {
+            String data = myReader.nextLine();
 
-                if(data.contains("//")){
-                    data = myReader.nextLine();
-                }
-                if(counter == 10 || counter == 20||counter == 30){
-                    counter2 = 0;
-                }
-                if(counter < 10){
-                    costos_base[counter2] = Integer.parseInt(data);
-                    counter2++;
-                }
-                if(counter >= 10 && counter < 20 ){
-                    prod_base[counter2] = Double.parseDouble(data);
-                    counter2++;
-                }
-                if(counter >= 20 && counter < 30){
-                    taz_crec[counter2] = Double.parseDouble(data);
-                    counter2++;
-                }
-                if(counter >= 30 && counter < 40){
-                    multiplier[counter2] = Double.parseDouble(data);
-                    counter2++;
-                }
-                counter++;
+            if(data.contains("//")){
+                data = myReader.nextLine();
             }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
+            if(counter == 10 || counter == 20||counter == 30){
+                counter2 = 0;
+            }
+            if(counter < 10){
+                costos_base[counter2] = Integer.parseInt(data);
+                counter2++;
+            }
+            if(counter >= 10 && counter < 20 ){
+                prod_base[counter2] = Double.parseDouble(data);
+                counter2++;
+            }
+            if(counter >= 20 && counter < 30){
+                taz_crec[counter2] = Double.parseDouble(data);
+                counter2++;
+            }
+            if(counter >= 30 && counter < 40){
+                multiplier[counter2] = Double.parseDouble(data);
+                counter2++;
+            }
+            counter++;
         }
+        myReader.close();
 
         int h = 0;
         for(Mejoras m : Mejoras.values()){
