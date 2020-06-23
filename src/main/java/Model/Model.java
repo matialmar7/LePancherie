@@ -56,6 +56,7 @@ public class Model implements Observado{
         CAJA_REGISTRADORA(8,1,1,new Image("src/main/resources/Mejoras/Caja_Registradora/Caja_Registradora_lvl_1.png"),new Image("src/main/resources/Mejoras/Caja_Registradora/Cajas_Registradora_lvl_2.png"),new Image("src/main/resources/Mejoras/Caja_Registradora/Cajas_Registradora_lvl_3.png")),
         EMPLEADOS(9,1,1,new Image("src/main/resources/Mejoras/Empleados/Empleados_lvl_1.png"),new Image("src/main/resources/Mejoras/Empleados/Empleados_lvl_2.png"),new Image("src/main/resources/Mejoras/Empleados/Empleados_lvl_3.png")),
         SUCURSALES(10,1,1,new Image("src/main/resources/Mejoras/Sucursales/Sucursales_lvl_1.png"),new Image("src/main/resources/Mejoras/Sucursales/Sucursales_lvl_2.png"),new Image("src/main/resources/Mejoras/Sucursales/Sucursales_lvl_3.png"));
+
         public enum Nivel{
             INICIAL,MEDIO,AVANZADO
         }
