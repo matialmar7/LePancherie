@@ -23,7 +23,7 @@ public class Model implements Observado{
             "F",
             "A LOS PANCHOS SE LES DICE FRANCISCO",
             "EN UN KG ENTRAN 12 SALCHICAS",
-            "EL PANCHO MAS LARGO DEL MUNDO TIENE 203 METROS Y PESA 120KGs",
+            "EL PANCHO MAS LARGO DEL MUNDO TIENE 203 METROS Y PESA 120KGs","AGUANTE PANCHO VIEJAAAA",
             };
 
     private static long PanchoClickTimestamp = System.currentTimeMillis();
@@ -229,7 +229,7 @@ public class Model implements Observado{
                 addPancho(1);
             }
             else{
-                addPancho(Mejoras.CURSORES.getCantidad()+1);
+                addPancho(Mejoras.CURSORES.getCantidad()*0.1+1);
             }
         }
         else{
