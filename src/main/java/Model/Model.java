@@ -12,7 +12,6 @@ public class Model implements Observado{
 
     private static double StockPanchos = 0;
     private static double PanchoIdle = 0;
-    private NumberFormat nf = NumberFormat.getCompactNumberInstance(Locale.US, NumberFormat.Style.SHORT);
     private static String Alias = "";
     private static Fondos fondo = Fondos.CASA;
     private static String mensaje = "LOS PANCHOS SON BUENOS PARA LA SALUD";
@@ -402,6 +401,7 @@ public class Model implements Observado{
     }
     //Auxiliares
     public String formatText(double i){
+        NumberFormat nf = NumberFormat.getCompactNumberInstance(Locale.US, NumberFormat.Style.SHORT);
         if(i<10){
             return String.format("%.1f",i);
         }
@@ -410,7 +410,9 @@ public class Model implements Observado{
         return out;
     }
     public String formatTextLong(double i){
+        NumberFormat nf = NumberFormat.getCompactNumberInstance(Locale.US, NumberFormat.Style.LONG);
         nf.setMaximumFractionDigits(2);
+        nf.setMaximumIntegerDigits(2);
         String out = nf.format(i);
         return out;
     }
