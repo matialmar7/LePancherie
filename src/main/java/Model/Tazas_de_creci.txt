@@ -1,37 +1,37 @@
 //Costos: empezamos de mejora0 hasta mejora9
 15
-100
+150
 900
 3200
 9500
-16000
+19000
 52000
 123000
 600000
-10000000
+7500000
 //ProdBase: empezamos de mejora0 hasta mejora9
 0.1
 1
-8
-47
-260
-140
+10
+30
+90
+190
 380
-440
+640
 2600
 16000
 //tasaCrec: empezamos de mejora0 hasta mejora9
-0.1
-0.27
-0.33
-0.38
+0.6
+0.25
+0.32
+0.35
 0.40
 0.45
 0.47
 0.49
 0.51
 0.52
-0.30
+0.55
 //Multipli: empezamos de mejora0 hasta mejora9
 1
 1

@@ -229,7 +229,7 @@ public class Model implements Observado{
                 addPancho(1);
             }
             else{
-                addPancho(Mejoras.CURSORES.getCantidad()+1);
+                addPancho(Mejoras.CURSORES.getCantidad()*0.1+1);
             }
         }
         else{
@@ -410,7 +410,7 @@ public class Model implements Observado{
         return out;
     }
     public String formatTextLong(double i){
-        nf.setMaximumFractionDigits(2);
+        nf.setMaximumFractionDigits(3);
         String out = nf.format(i);
         return out;
     }
