@@ -19,7 +19,7 @@ class ModelTest {
 
     @Start
     private void start(Stage stage){
-        Model modelo = new Model();
+        modelo = new Model();
         stage.show();
     }
     @Test
