@@ -153,8 +153,8 @@ public class MainView implements Observador {
     private void updateLabels(){
         //ACTUALIZO LABELS STOCKS, PANCHOS/S, MEJORAS
         msjBanner.setText(modelo.getMensaje());
-        stockLbl.setText(String.valueOf(modelo.getPanchos()));
-        panchosLbl.setText(String.format(modelo.formatText((int)modelo.getPanchoIdle()))+ " panchos/s");
+        stockLbl.setText(modelo.formatTextLong(modelo.getPanchos()));
+        panchosLbl.setText(String.format(modelo.formatText(modelo.getPanchoIdle()))+ " panchos/s");
         //Cantidades
         cursorLbl.setText(Integer.toString(Model.Mejoras.CURSORES.getCantidad()));
         condimentosLbl.setText(Integer.toString(Model.Mejoras.CONDIMENTOS.getCantidad()));

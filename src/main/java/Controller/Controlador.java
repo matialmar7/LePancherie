@@ -77,7 +77,7 @@ public class Controlador {
 
     //METODOS PRINCIPALES
     public void Pancho_onClick(){
-        modelo.addPanchoClick(1);
+        modelo.addPanchoClick();
     }
     public void addPanchoIdle(){
         modelo.addPancho(modelo.getPanchoIdle()/10);

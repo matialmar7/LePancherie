@@ -12,6 +12,7 @@ public class Model implements Observado{
 
     private static double StockPanchos = 0;
     private static double PanchoIdle = 0;
+    private NumberFormat nf = NumberFormat.getCompactNumberInstance(Locale.US, NumberFormat.Style.SHORT);
     private static String Alias = "";
     private static Fondos fondo = Fondos.CASA;
     private static String mensaje = "LOS PANCHOS SON BUENOS PARA LA SALUD";
@@ -31,16 +32,12 @@ public class Model implements Observado{
     private int[] cantidadMejoras = new int[10];
     String pesho = "pesho.txt";
     private File file = null;
-
     //WEAS PARA CARGAR LAS MEJROAS
     private int[] costos_base  = new int[10];
     private double[] prod_base = new double[10];
     private double[] taz_crec  = new double[10];
     private double[] multiplier = new double[10];
-
-
     //Valores de configuracion mejoras
-
     public enum Mejoras{
         CURSORES(1,3,0.075,new Image("src/main/resources/Mejoras/Cursores/Cursores_lvl_1.png"),new Image("src/main/resources/Mejoras/Cursores/Cursores_lvl_2.png"),new Image("src/main/resources/Mejoras/Cursores/Cursores_lvl_3.png")),
         CONDIMENTOS(2,1,1, new Image("src/main/resources/Mejoras/Condimentos/Condimentos_lvl_1.png"),new Image("src/main/resources/Mejoras/Condimentos/Condimentos_lvl_2.png"),new Image("src/main/resources/Mejoras/Condimentos/Condimentos_lvl_3.png")),
@@ -224,11 +221,16 @@ public class Model implements Observado{
         }
     }
     /*ENTRO CON UN VALOR i Y LE ADDPANCHO(i)*/
-    public void addPanchoClick(double i){
+    public void addPanchoClick(){
         long timestamp = System.currentTimeMillis();
         if(validarClick(timestamp)){
             PanchoClickTimestamp = timestamp;
-            addPancho(i);
+            if(Mejoras.CURSORES.getCantidad() == 0){
+                addPancho(1);
+            }
+            else{
+                addPancho(Mejoras.CURSORES.getCantidad()+1);
+            }
         }
         else{
             setMensaje("PARA UN POCO ESTAS YENDO DEMASIADO RAPIDO!!");
@@ -399,9 +401,16 @@ public class Model implements Observado{
         //notificar(observadores.get(0));
     }
     //Auxiliares
-    public String formatText(int i){
-        NumberFormat nf = NumberFormat.getCompactNumberInstance(Locale.US, NumberFormat.Style.SHORT);
+    public String formatText(double i){
+        if(i<10){
+            return String.format("%.1f",i);
+        }
         nf.setMaximumFractionDigits(1);
+        String out = nf.format(i);
+        return out;
+    }
+    public String formatTextLong(double i){
+        nf.setMaximumFractionDigits(2);
         String out = nf.format(i);
         return out;
     }
