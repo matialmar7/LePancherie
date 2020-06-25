@@ -246,7 +246,12 @@ public class Model implements Observado{
             PanchoIdle += m.getCantidad()*m.getProdBase();
         }
     }
-
+    private void setFondo(Fondos f){
+        fondo = f;
+    }
+    private Fondos getFondo(){
+        return fondo;
+    }
 
     public void comprarMejora(Mejoras mejora){
         if(mejora.cantidad == 200){
@@ -288,7 +293,12 @@ public class Model implements Observado{
             lector = new Scanner(file);
             line = lector.nextLine();
             this.addPancho(Integer.parseInt(line.trim()));
-
+            line = lector.nextLine();
+            for(Fondos f : Fondos.values()){
+                if(f.ordinal() == Integer.parseInt(line.trim())){
+                    setFondo(f);
+                }
+            }
             for(Mejoras m : Mejoras.values()){
                 if(lector.hasNextLine()){
                     line = lector.nextLine();
@@ -312,6 +322,7 @@ public class Model implements Observado{
         try {
             FileWriter writer = new FileWriter(file);
             writer.write(""+ this.getPanchos()+"\n");
+            writer.write(""+ this.getFondo().ordinal()+"\n");
             for(Mejoras m : Mejoras.values()){
                 writer.write(m.getCantidad() + "\n");
             }
