@@ -12,6 +12,7 @@ public class Model implements Observado{
 
     private static double StockPanchos = 0;
     private static double PanchoIdle = 0;
+    private NumberFormat nf = NumberFormat.getCompactNumberInstance(Locale.US, NumberFormat.Style.SHORT);
     private static String Alias = "";
     private static Fondos fondo = Fondos.CASA;
     private static String mensaje = "LOS PANCHOS SON BUENOS PARA LA SALUD";
