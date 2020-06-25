@@ -28,7 +28,7 @@
                   <Font size="14.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="10.0" />
+                  <Insets bottom="10.0" top="4.0" />
                </VBox.margin>
             </Label>
             <Label id="texPs" text="Ps">
@@ -44,7 +44,7 @@
                   <Font size="14.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="5.0" />
+                  <Insets bottom="4.0" />
                </VBox.margin>
             </Label>
             <Label id="texCONDIMENTOS" fx:id="texCONDIMENTOS" text="Mejora1:">
@@ -52,7 +52,7 @@
                   <Font size="14.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="5.0" />
+                  <Insets bottom="4.0" />
                </VBox.margin>
             </Label>
             <Label id="texPAPAS" fx:id="texPAPAS" text="Mejora2:">
@@ -60,7 +60,7 @@
                   <Font size="14.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="5.0" />
+                  <Insets bottom="4.0" />
                </VBox.margin>
             </Label>
             <Label id="texBEBIDAS" fx:id="texBEBIDAS" text="Mejora3:">
@@ -68,7 +68,7 @@
                   <Font size="14.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="5.0" />
+                  <Insets bottom="4.0" />
                </VBox.margin>
             </Label>
             <Label id="texPARRILLAS" fx:id="texPARRILLAS" text="Mejora4:">
@@ -76,7 +76,7 @@
                   <Font size="14.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="5.0" />
+                  <Insets bottom="4.0" />
                </VBox.margin>
             </Label>
             <Label id="texSALCHICHERA" fx:id="texSALCHICHERA" text="Mejora5:">
@@ -84,7 +84,7 @@
                   <Font size="14.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="5.0" />
+                  <Insets bottom="4.0" />
                </VBox.margin>
             </Label>
             <Label id="texHELADERA" fx:id="texHELADERA" text="Mejora6:">
@@ -92,7 +92,7 @@
                   <Font size="14.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="5.0" />
+                  <Insets bottom="4.0" />
                </VBox.margin>
             </Label>
             <Label id="texCAJA_REGISTRADORA" fx:id="texCAJA_REGISTRADORA" text="Mejora7:">
@@ -100,7 +100,7 @@
                   <Font size="14.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="5.0" />
+                  <Insets bottom="4.0" />
                </VBox.margin>
             </Label>
             <Label id="texEMPLEADOS" fx:id="texEMPLEADOS" text="Mejora8:">
@@ -108,7 +108,7 @@
                   <Font size="14.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="5.0" />
+                  <Insets bottom="4.0" />
                </VBox.margin>
             </Label>
             <Label id="texSUCURSALES" fx:id="texSUCURSALES" text="Mejora9:">
@@ -116,7 +116,7 @@
                   <Font size="14.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="5.0" />
+                  <Insets bottom="4.0" />
                </VBox.margin>
             </Label>
          </children>
