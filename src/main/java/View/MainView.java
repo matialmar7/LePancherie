@@ -154,7 +154,7 @@ public class MainView implements Observador {
         //ACTUALIZO LABELS STOCKS, PANCHOS/S, MEJORAS
         msjBanner.setText(modelo.getMensaje());
         stockLbl.setText(String.valueOf(modelo.getPanchos()));
-        panchosLbl.setText(String.format("%.1f", modelo.getPanchoIdle()) + " panchos/s");
+        panchosLbl.setText(String.format(modelo.formatText((int)modelo.getPanchoIdle()))+ " panchos/s");
         //Cantidades
         cursorLbl.setText(Integer.toString(Model.Mejoras.CURSORES.getCantidad()));
         condimentosLbl.setText(Integer.toString(Model.Mejoras.CONDIMENTOS.getCantidad()));
@@ -167,16 +167,16 @@ public class MainView implements Observador {
         empleadosLbl.setText(Integer.toString(Model.Mejoras.EMPLEADOS.getCantidad()));
         sucursalesLvl.setText(Integer.toString(Model.Mejoras.SUCURSALES.getCantidad()));
         //Costos
-        cursorCostLbl.setText(Integer.toString(Model.Mejoras.CURSORES.getCosto()));
-        condimenttosCostLbl.setText(Integer.toString(Model.Mejoras.CONDIMENTOS.getCosto()));
-        papasCostLbl.setText(Integer.toString(Model.Mejoras.PAPAS.getCosto()));
-        bebidasCostLbl.setText(Integer.toString(Model.Mejoras.BEBIDAS.getCosto()));
-        parrillasCostLbl.setText(Integer.toString(Model.Mejoras.PARRILLAS.getCosto()));
-        salchicherasCostLbl.setText(Integer.toString(Model.Mejoras.SALCHICHERA.getCosto()));
-        heladerasCostLbl.setText(Integer.toString(Model.Mejoras.HELADERA.getCosto()));
-        cajaCostLbl.setText(Integer.toString(Model.Mejoras.CAJA_REGISTRADORA.getCosto()));
-        empleadosCostLbl.setText(Integer.toString(Model.Mejoras.EMPLEADOS.getCosto()));
-        sucursalesCostLbl.setText(Integer.toString(Model.Mejoras.SUCURSALES.getCosto()));
+        cursorCostLbl.setText(modelo.formatText(Model.Mejoras.CURSORES.getCosto()));
+        condimenttosCostLbl.setText(modelo.formatText(Model.Mejoras.CONDIMENTOS.getCosto()));
+        papasCostLbl.setText(modelo.formatText(Model.Mejoras.PAPAS.getCosto()));
+        bebidasCostLbl.setText(modelo.formatText(Model.Mejoras.BEBIDAS.getCosto()));
+        parrillasCostLbl.setText(modelo.formatText(Model.Mejoras.PARRILLAS.getCosto()));
+        salchicherasCostLbl.setText(modelo.formatText(Model.Mejoras.SALCHICHERA.getCosto()));
+        heladerasCostLbl.setText(modelo.formatText(Model.Mejoras.HELADERA.getCosto()));
+        cajaCostLbl.setText(modelo.formatText(Model.Mejoras.CAJA_REGISTRADORA.getCosto()));
+        empleadosCostLbl.setText(modelo.formatText(Model.Mejoras.EMPLEADOS.getCosto()));
+        sucursalesCostLbl.setText(modelo.formatText(Model.Mejoras.SUCURSALES.getCosto()));
 
     }
     private void updateMejoras(){

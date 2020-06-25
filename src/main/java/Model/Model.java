@@ -3,11 +3,10 @@ package src.main.java.Model;
 import javafx.scene.image.Image;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.text.CompactNumberFormat;
+import java.text.NumberFormat;
+import java.util.*;
 import java.lang.System;
-import java.util.Scanner;
 
 public class Model implements Observado{
 
@@ -85,11 +84,9 @@ public class Model implements Observado{
                 cantidad += i;
             }
         }
-
         public double getProdBase() {
             return prodBase;
         }
-
         public int getCantidad(){
             return cantidad;
         }
@@ -129,7 +126,6 @@ public class Model implements Observado{
         public Nivel getCurrentLevel(){
             return currentLvl;
         }
-
         public void setCostoBase(double costo){
             this.costoBase= (int) costo;
         }
@@ -152,6 +148,7 @@ public class Model implements Observado{
         Image fondo;
         int CostoPanchos;
         int nivel;
+
         Fondos(int nivel,Image fondo, int CantPanchos){
             this.fondo = fondo;
             this.nivel = nivel;
@@ -198,12 +195,10 @@ public class Model implements Observado{
             notificar(o);}
     }
     //****************************************************************************
-
-
+    //Clicks
     private boolean validarClick(long timestamp){
         return (timestamp - PanchoClickTimestamp) >= 100;
     }
-
     private void takePanchos(int i){
             StockPanchos -= i;
             notificar(observadores.get(0));
@@ -228,7 +223,6 @@ public class Model implements Observado{
             notificar(observadores.get(1));
         }
     }
-
     /*ENTRO CON UN VALOR i Y LE ADDPANCHO(i)*/
     public void addPanchoClick(double i){
         long timestamp = System.currentTimeMillis();
@@ -252,7 +246,6 @@ public class Model implements Observado{
     private Fondos getFondo(){
         return fondo;
     }
-
     public void comprarMejora(Mejoras mejora){
         if(mejora.cantidad == 200){
             setMensaje("HAS LLEGADO AL LIMITE PARA ESTA CANTIDAD DE MEJORAS");
@@ -272,14 +265,12 @@ public class Model implements Observado{
         }
 
     }
-
     public int getPanchos(){
         return (int)StockPanchos;
     }
     public double getPanchoIdle(){
         return PanchoIdle;
     }
-
     public void setAlias(String a){
         this.Alias = a;
     }
@@ -293,12 +284,16 @@ public class Model implements Observado{
             lector = new Scanner(file);
             line = lector.nextLine();
             this.addPancho(Integer.parseInt(line.trim()));
-            line = lector.nextLine();
-            for(Fondos f : Fondos.values()){
-                if(f.ordinal() == Integer.parseInt(line.trim())){
-                    setFondo(f);
+            if(lector.hasNextLine()){
+                line = lector.nextLine();
+                int fond = Integer.parseInt(line.trim());
+                for(Fondos f : Fondos.values()){
+                    if(f.ordinal() == fond){
+                        setFondo(f);
+                    }
                 }
             }
+
             for(Mejoras m : Mejoras.values()){
                 if(lector.hasNextLine()){
                     line = lector.nextLine();
@@ -399,9 +394,15 @@ public class Model implements Observado{
         Random rand = new Random();
         return Mensajes[rand.nextInt(Mensajes.length)]; //Elijo mensaje aleatorio
     }
-
     public void setMensaje(String msj){
         mensaje = msj;
         //notificar(observadores.get(0));
+    }
+    //Auxiliares
+    public String formatText(int i){
+        NumberFormat nf = NumberFormat.getCompactNumberInstance(Locale.US, NumberFormat.Style.SHORT);
+        nf.setMaximumFractionDigits(1);
+        String out = nf.format(i);
+        return out;
     }
 }
